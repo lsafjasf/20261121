@@ -1,0 +1,49 @@
+{
+  "name": "four_mic_demo",
+  "sample_rate": 16000,
+  "sound_speed": 343.0,
+  "recording_seconds": 0.64,
+  "reference_channel": 0,
+  "microphones": [
+    [-0.16, -0.06, 0.0],
+    [0.16, -0.06, 0.0],
+    [-0.14, 0.08, 0.0],
+    [0.14, 0.08, 0.0]
+  ],
+  "sources": [
+    {"name": "front_left", "position": [-0.9, 1.6, 0.35]},
+    {"name": "front_right", "position": [1.1, 1.5, 0.45]}
+  ],
+  "sweep": {
+    "duration_s": 0.30,
+    "f_start": 500.0,
+    "f_stop": 6500.0,
+    "fade_s": 0.005,
+    "noise_rms": 2e-06
+  },
+  "wall": {
+    "point": [0.0, 2.2, 0.3],
+    "normal": [0.0, 1.0, 0.0],
+    "reflection_amplitudes": [0.55, 0.7, 2.2, 0.6]
+  },
+  "installation": {
+    "microphones": [
+      [-0.16, -0.06, 0.0],
+      [0.16, -0.06, 0.0],
+      [-0.14, 0.08, 0.0],
+      [0.14, 0.092, 0.006]
+    ],
+    "channel_order": [0, 1, 3, 2],
+    "gain": [1.0, 1.15, 0.87, 1.0],
+    "polarity": [1.0, 1.0, -1.0, 1.0]
+  },
+  "analysis": {
+    "max_delay_s": 0.02,
+    "candidate_count": 6,
+    "gain_warn_db": 1.0,
+    "delay_warn_mm": 10.0,
+    "map_tolerance_samples": 0.12,
+    "peak_rel_threshold": 0.01,
+    "beam_frequencies": [1200.0, 1800.0, 2500.0, 3500.0, 4800.0]
+  }
+}
