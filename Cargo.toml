@@ -1,0 +1,18 @@
+[package]
+name = "roundtrip-probe"
+version = "0.1.0"
+edition = "2024"
+description = "Low-amplitude coded audio round-trip delay and jitter measurement"
+
+[lib]
+name = "roundtrip_probe"
+path = "src/lib.rs"
+
+[[bin]]
+name = "roundtrip-probe"
+path = "src/bin/roundtrip-probe.rs"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
