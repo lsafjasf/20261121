@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "sample_rate": 48000,
+  "window_ms": 20.0,
+  "guard_ms": 2.0,
+  "description": "同一组强瞬态敲击；strong_hits 在起音前为数字静音，true_weak_prelude 在每个起音前 60 ms 加入真实低电平前奏。",
+  "cases": [
+    {
+      "id": "strong_hits",
+      "title": "强敲击 / 静音前窗",
+      "file": "strong_hits.wav",
+      "onsets_s": [
+        0.85,
+        1.75,
+        2.65,
+        3.55,
+        4.45
+      ],
+      "expect": "codec-added",
+      "description": "测量窗口内参考源为数字静音；任何窗口能量都可归因于编码。"
+    },
+    {
+      "id": "true_weak_prelude",
+      "title": "强敲击 / 真实弱前奏",
+      "file": "true_weak_prelude.wav",
+      "onsets_s": [
+        0.85,
+        1.75,
+        2.65,
+        3.55,
+        4.45
+      ],
+      "expect": "source-prelude",
+      "description": "每个起音前有 60 ms 渐强低电平拾音；窗口内源能量真实存在，验收时必须扣除后再判断编码新增。"
+    }
+  ]
+}
