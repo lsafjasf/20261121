@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ECHOLAB · 蝙蝠声学筛查台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071015'/%3E%3Cpath d='M4 17h4l3-8 4 15 4-12 2 5h7' fill='none' stroke='%2388e0c1' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><path d="M3 22h5l3-9 5 18 5-22 5 15 3-7 2 5h6" /></svg>
+        </div>
+        <div class="brand-copy">
+          <strong>ECHOLAB</strong>
+          <span>BAT ACOUSTIC DESK</span>
+        </div>
+      </div>
+
+      <div class="sidebar-section-head">
+        <span>采样会话</span>
+        <span class="count-badge" id="source-count">0</span>
+      </div>
+      <div class="source-list" id="source-list"></div>
+
+      <label class="upload-card" id="upload-card">
+        <input type="file" id="file-input" accept=".wav,.flac,.aiff,.aif,audio/wav,audio/flac">
+        <span class="upload-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 15v4h14v-4"/></svg>
+        </span>
+        <span class="upload-copy">
+          <b>载入声源</b>
+          <small>WAV / FLAC · 保留原始采样率</small>
+        </span>
+      </label>
+
+      <div class="sidebar-spacer"></div>
+
+      <div class="engine-card">
+        <div class="engine-title">
+          <span class="status-dot"></span>
+          <span>本地监听引擎</span>
+          <span class="engine-state">READY</span>
+        </div>
+        <dl>
+          <div><dt>源采样率</dt><dd id="side-rate">—</dd></div>
+          <div><dt>监听采样率</dt><dd>48.0 kHz</dd></div>
+          <div><dt>处理位置</dt><dd>本机内存</dd></div>
+        </dl>
+        <p>无上传云端 · 样本坐标闭环</p>
+      </div>
+      <div class="sidebar-footer">
+        <span>ECHOLAB / 01</span>
+        <span>LOCAL ONLY</span>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="session-heading">
+          <div class="eyebrow">SCREENING SESSION / <span id="crumb-kind">DEMO</span></div>
+          <h1 id="source-title">正在装载声源…</h1>
+        </div>
+        <div class="header-meta">
+          <span class="meta-pill accent" id="rate-pill">— kHz</span>
+          <span class="meta-pill" id="duration-pill">— s</span>
+          <span class="meta-pill" id="channel-pill">— ch</span>
+        </div>
+        <div class="header-actions">
+          <button class="button ghost" id="selftest-button">
+            <svg viewBox="0 0 24 24"><path d="M4 13h4l2-7 4 13 2-6h4"/></svg>
+            信号自检
+            <span class="button-badge">CAL</span>
+          </button>
+          <button class="button primary" id="export-button">
+            <svg viewBox="0 0 24 24"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg>
+            导出组合
+          </button>
+        </div>
+      </header>
+
+      <section class="mode-bar">
+        <div class="mode-switch" role="tablist" aria-label="监听模式">
+          <button class="mode-tab active" data-mode="heterodyne" role="tab">
+            <span class="mode-glyph">
+              <svg viewBox="0 0 28 28"><path d="M3 14h5m12 0h5M9 8v12M14 5v18M19 9v10"/></svg>
+            </span>
+            <span><b>异频下变换</b><small>HETERODYNE</small></span>
+          </button>
+          <button class="mode-tab" data-mode="time_expansion" role="tab">
+            <span class="mode-glyph">
+              <svg viewBox="0 0 28 28"><path d="M5 14h18M8 9l-3 5 3 5m12-10 3 5-3 5"/></svg>
+            </span>
+            <span><b>减速试听</b><small>TIME EXPANSION</small></span>
+          </button>
+        </div>
+        <div class="transport">
+          <button class="play-button" id="play-button" aria-label="播放">
+            <svg class="play-icon" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24"><path d="M8 5h3v14H8zm5 0h3v14h-3z"/></svg>
+          </button>
+          <div class="transport-time">
+            <span id="source-time">00:00.000</span>
+            <small>源时间</small>
+          </div>
+          <div class="transport-rule"></div>
+          <div class="transport-time muted">
+            <span id="monitor-time">00:00.000</span>
+            <small>监听时间</small>
+          </div>
+          <div class="render-indicator" id="render-indicator">
+            <span></span>
+            <b>未生成监听</b>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen-card">
+        <div class="screen-toolbar">
+          <div class="screen-title">
+            <span class="live-dot"></span>
+            原始样本频谱
+            <span class="view-range" id="view-range">—</span>
+          </div>
+          <div class="screen-tools">
+            <div class="segmented mini">
+              <button id="zoom-out" title="缩小">−</button>
+              <button id="zoom-in" title="放大">＋</button>
+            </div>
+            <button class="tool-button" id="fit-selection">适配选区</button>
+            <button class="tool-button" id="full-view">全览</button>
+            <select id="frequency-preset" class="tool-select" aria-label="频率范围">
+              <option value="10000,96000">10–96 kHz</option>
+              <option value="10000,48000">10–48 kHz</option>
+              <option value="40000,96000">40–96 kHz</option>
+              <option value="0,96000">0–96 kHz</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="plot-shell" id="plot-shell">
+          <div class="frequency-axis" id="frequency-axis"></div>
+          <div class="plot-area" id="plot-area">
+            <canvas id="spectrogram-canvas"></canvas>
+            <canvas id="waveform-canvas" class="waveform-canvas"></canvas>
+            <div class="band-overlay" id="band-overlay"></div>
+            <div class="selection-overlay" id="selection-overlay">
+              <span class="selection-label" id="selection-label"></span>
+              <span class="selection-handle left" data-handle="left"></span>
+              <span class="selection-handle right" data-handle="right"></span>
+            </div>
+            <div class="playhead" id="playhead"><span id="playhead-flag">0</span></div>
+            <div class="hover-cursor" id="hover-cursor"></div>
+            <div class="plot-loading" id="plot-loading"><span></span> 正在计算频谱</div>
+            <div class="plot-empty" id="plot-empty">拖拽建立选区，开始筛查</div>
+          </div>
+          <div class="time-axis" id="time-axis"></div>
+        </div>
+
+        <div class="screen-footer">
+          <div class="color-legend">
+            <span>−90 dB</span>
+            <i></i>
+            <span>−20 dB</span>
+          </div>
+          <div class="screen-hint">
+            <span>拖拽选区</span><span>滚轮缩放</span><span>双击全览</span><span>单击定位</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="selection-strip">
+        <div class="selection-title">
+          <span class="index-mark">01</span>
+          <div><b>筛查选区</b><small>左闭右开源样本区间</small></div>
+        </div>
+        <label class="sample-field">
+          <span>起点帧</span>
+          <input id="start-input" inputmode="numeric" autocomplete="off">
+          <em id="start-time">—</em>
+        </label>
+        <span class="range-arrow">→</span>
+        <label class="sample-field">
+          <span>终点帧</span>
+          <input id="end-input" inputmode="numeric" autocomplete="off">
+          <em id="end-time">—</em>
+        </label>
+        <div class="endpoint-actions">
+          <button class="text-button" id="set-start">游标设为起点</button>
+          <button class="text-button" id="set-end">游标设为终点</button>
+        </div>
+        <div class="cursor-readout">
+          <span>游标</span>
+          <b id="cursor-source">—</b>
+          <span class="divider-dot"></span>
+          <span>监听</span>
+          <b id="cursor-monitor">—</b>
+        </div>
+      </section>
+    </main>
+
+    <aside class="inspector">
+      <div class="inspector-head">
+        <div>
+          <span class="eyebrow">MONITOR CHAIN</span>
+          <h2>监听设置</h2>
+        </div>
+        <span class="mode-tag" id="mode-tag">HET</span>
+      </div>
+
+      <div class="inspector-scroll">
+        <section class="control-section" id="heterodyne-controls">
+          <div class="control-heading">
+            <label for="center-range">中心频率</label>
+            <output id="center-value">70.0 kHz</output>
+          </div>
+          <input class="frequency-slider" type="range" id="center-range" min="5000" max="95000" step="250" value="70000">
+          <div class="quick-frequencies">
+            <button data-frequency="25000">25k</button>
+            <button data-frequency="45000">45k</button>
+            <button data-frequency="60000">60k</button>
+            <button data-frequency="70000" class="active">70k</button>
+            <button data-frequency="85000">85k</button>
+          </div>
+
+          <div class="field-label-row">
+            <span>边带选择</span>
+            <span class="help-tip" title="USB 取中心频率以上，LSB 取中心频率以下">?</span>
+          </div>
+          <div class="sideband-switch" id="sideband-switch">
+            <button data-sideband="USB" class="active">
+              <span>USB</span><b>上边带</b>
+            </button>
+            <button data-sideband="LSB">
+              <span>LSB</span><b>下边带</b>
+            </button>
+          </div>
+
+          <div class="band-diagram">
+            <div class="band-diagram-labels"><span id="band-low">62</span><span id="band-center">70</span><span id="band-high">86</span></div>
+            <div class="band-diagram-track">
+              <i id="band-fill"></i>
+              <span id="band-center-mark"></span>
+            </div>
+            <div class="band-diagram-caption">
+              <span>源频段</span><b id="band-caption">70–86 kHz</b>
+            </div>
+          </div>
+
+          <div class="select-field">
+            <label for="bandwidth-select">单侧带宽</label>
+            <select id="bandwidth-select">
+              <option value="4000">4 kHz</option>
+              <option value="8000">8 kHz</option>
+              <option value="16000" selected>16 kHz</option>
+              <option value="24000">24 kHz</option>
+              <option value="32000">32 kHz</option>
+            </select>
+          </div>
+          <p class="control-note" id="heterodyne-note">听到的 0–16 kHz 对应源信号 70–86 kHz；反向回算不丢失时间位置。</p>
+        </section>
+
+        <section class="control-section" id="expansion-controls" hidden>
+          <div class="control-heading">
+            <label>减速倍数</label>
+            <output id="factor-value">10.0×</output>
+          </div>
+          <div class="factor-grid" id="factor-grid">
+            <button data-factor="2">2×</button>
+            <button data-factor="5">5×</button>
+            <button data-factor="10" class="active">10×</button>
+            <button data-factor="20">20×</button>
+          </div>
+          <input class="frequency-slider expansion-slider" type="range" id="factor-range" min="1" max="50" step="1" value="10">
+          <div class="time-ratio-card">
+            <div><span>原始时长</span><b id="ratio-source-duration">—</b></div>
+            <div class="ratio-line"><i></i><span>×10</span></div>
+            <div><span>监听时长</span><b id="ratio-monitor-duration">—</b></div>
+          </div>
+          <p class="control-note">完整保留事件间隔与相对时间比例；所有频率按同一倍数下移，适合人工辨识调频结构。</p>
+        </section>
+
+        <section class="mapping-card">
+          <div class="mapping-head">
+            <span>样本回算</span>
+            <button class="icon-button" id="copy-mapping" title="复制映射">
+              <svg viewBox="0 0 24 24"><path d="M8 8h10v12H8z"/><path d="M5 16V4h10"/></svg>
+            </button>
+          </div>
+          <code id="mapping-formula">source = start + t × 192000 / 1</code>
+          <div class="mapping-grid">
+            <span>起点</span><b id="map-start">—</b>
+            <span>终点</span><b id="map-end">—</b>
+            <span>监听时长</span><b id="map-duration">—</b>
+            <span>频率关系</span><b id="map-frequency">—</b>
+          </div>
+        </section>
+
+        <button class="render-button" id="render-button">
+          <span class="render-button-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 12h3l2-5 4 10 2-5h3"/></svg>
+          </span>
+          <span><b>生成监听 WAV</b><small>按当前选区与参数渲染</small></span>
+          <span class="shortcut">R</span>
+        </button>
+
+        <section class="monitor-card">
+          <div class="monitor-head">
+            <div><span class="eyebrow">MONITOR OUTPUT</span><b>监听输出</b></div>
+            <span class="ready-badge" id="monitor-ready">STALE</span>
+          </div>
+          <div class="monitor-wave" id="monitor-wave">
+            <canvas id="monitor-canvas"></canvas>
+            <div class="monitor-playhead" id="monitor-playhead"></div>
+            <span class="monitor-zero">0</span>
+            <span class="monitor-end" id="monitor-end">0</span>
+          </div>
+          <div class="monitor-stats">
+            <div><span>文件</span><b id="monitor-file">—</b></div>
+            <div><span>样本数</span><b id="monitor-frames">—</b></div>
+            <div><span>格式</span><b>48k / PCM</b></div>
+          </div>
+        </section>
+
+        <section class="history-section">
+          <div class="history-head">
+            <span>导出记录</span>
+            <span class="count-badge" id="export-count">0</span>
+          </div>
+          <div class="export-history" id="export-history">
+            <p class="empty-copy">尚无导出。每次导出会同时写入原始片段、监听 WAV 与映射清单。</p>
+          </div>
+        </section>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast-stack" id="toast-stack"></div>
+
+  <div class="busy-overlay" id="busy-overlay" hidden>
+    <div class="busy-card">
+      <span class="busy-spinner"></span>
+      <div><b id="busy-title">正在处理</b><small id="busy-detail">请稍候</small></div>
+    </div>
+  </div>
+
+  <div class="modal-layer" id="selftest-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal selftest-modal" role="dialog" aria-modal="true" aria-labelledby="selftest-title">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">CALIBRATION / SHORT MULTI-TONE SWEEP</span>
+          <h2 id="selftest-title">边带与端点自检</h2>
+        </div>
+        <button class="close-button" data-close-modal aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body" id="selftest-body">
+        <div class="selftest-loading"><span class="busy-spinner"></span> 正在运行 7 阶扫频与端点探针…</div>
+      </div>
+      <div class="modal-foot">
+        <span id="selftest-source">CAL_192 · 192 kHz</span>
+        <div>
+          <button class="button ghost" id="load-calibration">载入校准信号</button>
+          <button class="button primary" id="rerun-selftest">重新自检</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-layer" id="export-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal export-modal" role="dialog" aria-modal="true" aria-labelledby="export-title">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">SAMPLE-LOCKED EXPORT</span>
+          <h2 id="export-title">导出对应关系</h2>
+        </div>
+        <button class="close-button" data-close-modal aria-label="关闭">×</button>
+      </div>
+      <div class="modal-body" id="export-body"></div>
+      <div class="modal-foot">
+        <span id="export-folder">exports/</span>
+        <button class="button ghost" data-close-modal>完成</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="monitor-audio" preload="auto"></audio>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

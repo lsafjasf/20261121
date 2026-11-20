@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+data/*.wav
+data/uploads/
+exports/*
+!exports/.gitkeep
+renders/*
+!renders/.gitkeep
+.pytest_cache/
+
