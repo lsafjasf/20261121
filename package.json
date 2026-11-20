@@ -1,0 +1,26 @@
+{
+  "name": "speech-review-race-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local long-video speech interval review tool with a deterministic race replay lab",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "replay": "vite-node src/demo/replay.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-sc": "^5.3.1",
+    "@fontsource/dm-mono": "^5.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-node": "^2.1.8",
+    "vitest": "^2.1.8"
+  }
+}
