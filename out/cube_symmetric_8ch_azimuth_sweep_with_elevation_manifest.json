@@ -1,0 +1,82 @@
+{
+  "layout": "cube_symmetric_8ch",
+  "layout_description": "Symmetric 8-channel cube (4 upper / 4 lower). The unit direction vectors form a closed convex polyhedron around the origin, so every direction on the sphere is covered by at least one VBAP triangle.",
+  "trajectory": "azimuth_sweep_with_elevation",
+  "sample_rate_hz": 48000,
+  "bit_depth": 24,
+  "block_size_samples": 512,
+  "num_samples": 384000,
+  "duration_s": 8.0,
+  "channel_order": [
+    "FLU",
+    "FRU",
+    "BLU",
+    "BRU",
+    "FLD",
+    "FRD",
+    "BLD",
+    "BRD"
+  ],
+  "speaker_positions": {
+    "FLU": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "FRU": [
+      1.0,
+      -1.0,
+      1.0
+    ],
+    "BLU": [
+      -1.0,
+      1.0,
+      1.0
+    ],
+    "BRU": [
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "FLD": [
+      1.0,
+      1.0,
+      -1.0
+    ],
+    "FRD": [
+      1.0,
+      -1.0,
+      -1.0
+    ],
+    "BLD": [
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "BRD": [
+      -1.0,
+      -1.0,
+      -1.0
+    ]
+  },
+  "multichannel_wav": "cube_symmetric_8ch_azimuth_sweep_with_elevation_multichannel.wav",
+  "per_channel_wavs": [
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch00_FLU.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch01_FRU.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch02_BLU.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch03_BRU.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch04_FLD.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch05_FRD.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch06_BLD.wav",
+    "cube_symmetric_8ch_azimuth_sweep_with_elevation_ch07_BRD.wav"
+  ],
+  "valid_vbap_triplets": 32,
+  "degradation": {
+    "policy": "directions outside the convex cone of speaker unit vectors are routed to the nearest single speaker; angular error is reported per event",
+    "degraded_blocks": 0,
+    "degraded_block_ratio": 0.0,
+    "events": []
+  },
+  "mean_pan_error_deg_when_covered": 0.0,
+  "max_pan_error_deg_when_covered": 1e-06
+}

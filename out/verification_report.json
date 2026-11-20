@@ -1,0 +1,415 @@
+{
+  "method": "3D VBAP (Vector Base Amplitude Panning), Pulkki 1997",
+  "trajectory": "azimuth_sweep_with_elevation",
+  "config": {
+    "sample_rate": 48000,
+    "block_size": 512,
+    "amplitude": 0.6,
+    "bit_depth": 24
+  },
+  "layouts": {
+    "cube_symmetric_8ch": {
+      "description": "Symmetric 8-channel cube (4 upper / 4 lower). The unit direction vectors form a closed convex polyhedron around the origin, so every direction on the sphere is covered by at least one VBAP triangle.",
+      "channel_order": [
+        "FLU",
+        "FRU",
+        "BLU",
+        "BRU",
+        "FLD",
+        "FRD",
+        "BLD",
+        "BRD"
+      ],
+      "sphere_coverage_scan": {
+        "samples": 2664,
+        "covered_samples": 2664,
+        "degraded_samples": 0,
+        "coverage_ratio": 1.0,
+        "max_pan_error_deg_when_covered": 1.2074182697257333e-06,
+        "valid_triplets": 32
+      },
+      "verification": {
+        "pan_direction": {
+          "covered_blocks": 750,
+          "degraded_blocks_excluded": 0,
+          "max_angular_error_deg": 1e-06,
+          "mean_angular_error_deg": 0.0,
+          "sample_blocks": [
+            {
+              "block": 0,
+              "time_s": 0.005,
+              "target_az_el_deg": [
+                0.24,
+                0.07
+              ],
+              "rendered_az_el_deg": [
+                0.24,
+                0.07
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FLU",
+                "FLD",
+                "FRD"
+              ]
+            },
+            {
+              "block": 93,
+              "time_s": 0.997,
+              "target_az_el_deg": [
+                44.88,
+                12.47
+              ],
+              "rendered_az_el_deg": [
+                44.88,
+                12.47
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FLU",
+                "FRD",
+                "BLD"
+              ]
+            },
+            {
+              "block": 186,
+              "time_s": 1.989,
+              "target_az_el_deg": [
+                89.52,
+                24.87
+              ],
+              "rendered_az_el_deg": [
+                89.52,
+                24.87
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FLU",
+                "BLU",
+                "FLD"
+              ]
+            },
+            {
+              "block": 279,
+              "time_s": 2.981,
+              "target_az_el_deg": [
+                134.16,
+                12.73
+              ],
+              "rendered_az_el_deg": [
+                134.16,
+                12.73
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FLU",
+                "BRU",
+                "BLD"
+              ]
+            },
+            {
+              "block": 372,
+              "time_s": 3.973,
+              "target_az_el_deg": [
+                178.8,
+                0.33
+              ],
+              "rendered_az_el_deg": [
+                178.8,
+                0.33
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "BLU",
+                "FLD",
+                "BRD"
+              ]
+            },
+            {
+              "block": 465,
+              "time_s": 4.965,
+              "target_az_el_deg": [
+                223.44,
+                -12.07
+              ],
+              "rendered_az_el_deg": [
+                223.44,
+                -12.07
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "BLU",
+                "BRU",
+                "BRD"
+              ]
+            },
+            {
+              "block": 558,
+              "time_s": 5.957,
+              "target_az_el_deg": [
+                268.08,
+                -24.47
+              ],
+              "rendered_az_el_deg": [
+                268.08,
+                -24.47
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FRU",
+                "FLD",
+                "BRD"
+              ]
+            },
+            {
+              "block": 651,
+              "time_s": 6.949,
+              "target_az_el_deg": [
+                312.72,
+                -13.13
+              ],
+              "rendered_az_el_deg": [
+                312.72,
+                -13.13
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FRU",
+                "BRU",
+                "FRD"
+              ]
+            },
+            {
+              "block": 744,
+              "time_s": 7.941,
+              "target_az_el_deg": [
+                357.36,
+                -0.73
+              ],
+              "rendered_az_el_deg": [
+                357.36,
+                -0.73
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FLU",
+                "BRU",
+                "FRD"
+              ]
+            }
+          ]
+        },
+        "energy_continuity": {
+          "blocks": 750,
+          "active_blocks": 750,
+          "global_rendered_to_source_energy_ratio": 1.0,
+          "max_block_energy_ratio_deviation_from_unity": 9e-08,
+          "max_block_to_block_energy_ratio_jump": 8e-08,
+          "target_gain_power": {
+            "min_block_target_gain_power": 1.0,
+            "max_block_target_gain_power": 1.0
+          }
+        },
+        "export_order": {
+          "expected_order": [
+            "FLU",
+            "FRU",
+            "BLU",
+            "BRU",
+            "FLD",
+            "FRD",
+            "BLD",
+            "BRD"
+          ],
+          "manifest_order": [
+            "FLU",
+            "FRU",
+            "BLU",
+            "BRU",
+            "FLD",
+            "FRD",
+            "BLD",
+            "BRD"
+          ],
+          "manifest_matches": true,
+          "wav_header_ok": true,
+          "interleaved_vs_mono_identical": true,
+          "max_sample_diff": 0.0,
+          "filename_channel_tags_ok": true
+        },
+        "degradation": {
+          "degraded_blocks": 0,
+          "degraded_block_ratio": 0.0,
+          "events": []
+        }
+      },
+      "passed": true,
+      "artifacts": {
+        "multichannel_wav": "cube_symmetric_8ch_azimuth_sweep_with_elevation_multichannel.wav",
+        "manifest": "cube_symmetric_8ch_azimuth_sweep_with_elevation_manifest.json",
+        "per_channel_wav_count": 8
+      }
+    },
+    "front_top_cluster_8ch": {
+      "description": "Asymmetric 8-channel layout clustered in the front/top hemisphere. Directions outside the convex cone of speaker unit vectors are not covered by any VBAP triangle and trigger nearest-speaker degradation.",
+      "channel_order": [
+        "FL",
+        "FR",
+        "L90",
+        "R90",
+        "TFL",
+        "TFR",
+        "BFL",
+        "BFR"
+      ],
+      "sphere_coverage_scan": {
+        "samples": 2664,
+        "covered_samples": 511,
+        "degraded_samples": 2153,
+        "coverage_ratio": 0.1918168168168168,
+        "max_pan_error_deg_when_covered": 1.2074182697257333e-06,
+        "valid_triplets": 56
+      },
+      "verification": {
+        "pan_direction": {
+          "covered_blocks": 297,
+          "degraded_blocks_excluded": 453,
+          "max_angular_error_deg": 1e-06,
+          "mean_angular_error_deg": 0.0,
+          "sample_blocks": [
+            {
+              "block": 0,
+              "time_s": 0.005,
+              "target_az_el_deg": [
+                0.24,
+                0.07
+              ],
+              "rendered_az_el_deg": [
+                0.24,
+                0.07
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FL",
+                "FR",
+                "TFR"
+              ]
+            },
+            {
+              "block": 93,
+              "time_s": 0.997,
+              "target_az_el_deg": [
+                44.88,
+                12.47
+              ],
+              "rendered_az_el_deg": [
+                44.88,
+                12.47
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FL",
+                "FR",
+                "TFL"
+              ]
+            },
+            {
+              "block": 651,
+              "time_s": 6.949,
+              "target_az_el_deg": [
+                312.72,
+                -13.13
+              ],
+              "rendered_az_el_deg": [
+                312.72,
+                -13.13
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FL",
+                "FR",
+                "BFR"
+              ]
+            },
+            {
+              "block": 744,
+              "time_s": 7.941,
+              "target_az_el_deg": [
+                357.36,
+                -0.73
+              ],
+              "rendered_az_el_deg": [
+                357.36,
+                -0.73
+              ],
+              "angular_error_deg": 0.0,
+              "active_speakers": [
+                "FR",
+                "TFL",
+                "BFL"
+              ]
+            }
+          ]
+        },
+        "energy_continuity": {
+          "blocks": 750,
+          "active_blocks": 750,
+          "global_rendered_to_source_energy_ratio": 1.0,
+          "max_block_energy_ratio_deviation_from_unity": 1.4e-07,
+          "max_block_to_block_energy_ratio_jump": 1.4e-07,
+          "target_gain_power": {
+            "min_block_target_gain_power": 1.0,
+            "max_block_target_gain_power": 1.0
+          }
+        },
+        "export_order": {
+          "expected_order": [
+            "FL",
+            "FR",
+            "L90",
+            "R90",
+            "TFL",
+            "TFR",
+            "BFL",
+            "BFR"
+          ],
+          "manifest_order": [
+            "FL",
+            "FR",
+            "L90",
+            "R90",
+            "TFL",
+            "TFR",
+            "BFL",
+            "BFR"
+          ],
+          "manifest_matches": true,
+          "wav_header_ok": true,
+          "interleaved_vs_mono_identical": true,
+          "max_sample_diff": 0.0,
+          "filename_channel_tags_ok": true
+        },
+        "degradation": {
+          "degraded_blocks": 453,
+          "degraded_block_ratio": 0.604,
+          "events": [
+            {
+              "time_s": 1.63733,
+              "azimuth_deg": 73.68,
+              "elevation_deg": 20.467,
+              "nearest_speaker": "L90",
+              "angular_gap_deg": 22.067
+            }
+          ]
+        }
+      },
+      "passed": true,
+      "artifacts": {
+        "multichannel_wav": "front_top_cluster_8ch_azimuth_sweep_with_elevation_multichannel.wav",
+        "manifest": "front_top_cluster_8ch_azimuth_sweep_with_elevation_manifest.json",
+        "per_channel_wav_count": 8
+      }
+    }
+  },
+  "all_checks_passed": true
+}
