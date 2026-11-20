@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langcut"
+version = "1.0.0"
+description = "Frame-accurate multilingual opening renderer"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+langcut = "langcut.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["langcut*"]
