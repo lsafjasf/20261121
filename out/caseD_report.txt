@@ -1,0 +1,10 @@
+stereo check: caseD
+frames decoded: L=40 R=43
+start offset: 0 (eyes start together)
+dropped src frames L: none
+dropped src frames R: none
+repeated frames L: none
+repeated frames R: ['src 8 x2 @t8', 'src 30 x3 @t31']
+position drift (L-R file pos by src): ['shift -3 for src [31, 32, 33, 34, 35, 36]', 'shift -1 for src [9, 10, 11, 12, 13, 14]', 'shift +0 for src [0, 1, 2, 3, 4, 5]']
+mean abs pixel diff of index-aligned pairs: 3.8 (normal horizontal parallax; NOT used for sync verdict)
+verdict: no offset, no drops, REPEATS

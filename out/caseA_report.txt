@@ -1,0 +1,9 @@
+stereo check: caseA
+frames decoded: L=40 R=40
+start offset: 0 (eyes start together)
+dropped src frames L: none
+dropped src frames R: none
+repeated frames L: none
+repeated frames R: none
+mean abs pixel diff of index-aligned pairs: 3.8 (normal horizontal parallax; NOT used for sync verdict)
+verdict: no offset, no drops, no repeats
