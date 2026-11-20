@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rolling-shutter-calib"
+version = "0.1.0"
+description = "Rolling-shutter line time, exposure and scan-direction calibration from LED flicker video"
+readme = "rolling_shutter_calib/README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "opencv-python-headless>=4.7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+[project.scripts]
+rs-calib = "rolling_shutter_calib.cli:main"
+
+[tool.setuptools]
+packages = ["rolling_shutter_calib", "rolling_shutter_calib.tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["rolling_shutter_calib/tests"]
