@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11120f" />
+    <title>Looproom — 循环练习器</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23141610' stroke='%23d7ff69'/%3E%3Cpath d='M11 19V13M16 22V10M21 20V12' stroke='%23d7ff69' stroke-width='2'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <svg class="icon-defs" aria-hidden="true">
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z" /></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5h3v14H8zm5 0h3v14h-3z" /></symbol>
+      <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.5" /></symbol>
+      <symbol id="i-rewind" viewBox="0 0 24 24"><path d="M6 5h2v14H6zm3 7 9-6v12z" /></symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6L8 10H4zm12-2.2a5 5 0 0 1 0 8.4v-2a3 3 0 0 0 0-4.4z" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.4 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2" /></symbol>
+      <symbol id="i-verify" viewBox="0 0 24 24"><path d="M4 18V9m5 9V5m5 13v-6m5 6V8" fill="none" stroke="currentColor" stroke-width="2" /><path d="M3 21h18" fill="none" stroke="currentColor" stroke-width="1.5" /></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z" /></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 7.4 1.4-1.4 4.6 4.6L16.6 6 18 7.4 13.4 12l4.6 4.6-1.4 1.4-4.6-4.6L7.4 18 6 16.6l4.6-4.6z" /></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" /></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" /></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Looproom home">
+          <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+          <span class="brand-copy"><strong>LOOPROOM</strong><small>循环练习台</small></span>
+        </a>
+        <div class="session-id">
+          <span>SESSION 041</span>
+          <b>PRACTICE / LOOP</b>
+        </div>
+        <div class="topbar-actions">
+          <div class="engine-status" id="engine-status">
+            <i></i><span>ENGINE ARMED</span>
+          </div>
+          <button class="icon-button" id="btn-verify" title="打开时基校验">
+            <svg><use href="#i-verify"></use></svg>
+          </button>
+          <button class="shortcut-button" id="btn-shortcuts" title="键盘快捷键">
+            <span>?</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel library-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">SOURCE LIBRARY</span>
+              <h2>练习素材</h2>
+            </div>
+            <span class="count-badge">02</span>
+          </div>
+          <div class="track-list" id="track-list"></div>
+          <div class="library-spacer"></div>
+          <div class="source-note">
+            <div class="source-note-icon"><svg><use href="#i-spark"></use></svg></div>
+            <div>
+              <span class="eyebrow">OPEN SOURCE AUDIO</span>
+              <p>两段素材均由仓库内脚本实时合成，无采样版权依赖。</p>
+              <span class="micro-label">CC0 · PROGRAM GENERATED</span>
+            </div>
+          </div>
+          <div class="signal-row">
+            <span>WSOLA ENGINE</span>
+            <span class="signal-bars"><i></i><i></i><i></i><i></i><i></i></span>
+            <span>48 kHz</span>
+          </div>
+        </aside>
+
+        <section class="stage">
+          <div class="stage-heading">
+            <div class="track-heading">
+              <span class="eyebrow">ACTIVE LOOP</span>
+              <div class="title-line">
+                <h1 id="track-title">Blue Hour</h1>
+                <span class="style-pill" id="track-style">JAZZ</span>
+              </div>
+              <p id="track-subtitle">磁带爵士 · 电钢与行走贝斯</p>
+            </div>
+            <div class="track-facts">
+              <div><span>SOURCE</span><strong id="fact-bpm">88 BPM</strong></div>
+              <div><span>METER</span><strong id="fact-meter">4 / 4</strong></div>
+              <div><span>KEY</span><strong id="fact-key">F major</strong></div>
+            </div>
+          </div>
+
+          <div class="wave-card">
+            <div class="wave-toolbar">
+              <div class="wave-legend">
+                <span><i class="legend-loop"></i>LOOP REGION</span>
+                <span><i class="legend-source"></i>SOURCE</span>
+              </div>
+              <div class="wave-hint"><span id="snap-label">SNAP 1/2 BEAT</span><b>·</b><span>拖动 IN / OUT</span></div>
+            </div>
+            <div class="wave-canvas-wrap" id="wave-canvas-wrap">
+              <canvas id="waveform"></canvas>
+              <div class="countin-flag hidden" id="countin-flag">
+                <span>COUNT-IN</span><b id="countin-bars">1 BAR</b>
+              </div>
+              <div class="wave-empty" id="wave-empty"><span>PREPARING TIMELINE</span></div>
+            </div>
+            <div class="phrase-map" id="phrase-map"></div>
+          </div>
+
+          <div class="loop-controls">
+            <div class="point-card" data-point="in">
+              <span class="point-key">IN</span>
+              <div class="point-readout"><strong id="in-time">00:02.727</strong><span id="in-beat">BEAT 5.1</span></div>
+              <div class="nudge-group">
+                <button data-nudge="in" data-amount="-1" aria-label="入点前移半拍">−</button>
+                <button data-nudge="in" data-amount="1" aria-label="入点后移半拍">+</button>
+              </div>
+            </div>
+            <div class="loop-length">
+              <span>LOOP LENGTH</span>
+              <strong id="loop-length">8.00 BEATS</strong>
+              <small id="loop-seconds">5.455 SEC @ 88</small>
+            </div>
+            <div class="point-card" data-point="out">
+              <span class="point-key">OUT</span>
+              <div class="point-readout"><strong id="out-time">00:08.182</strong><span id="out-beat">BEAT 13.1</span></div>
+              <div class="nudge-group">
+                <button data-nudge="out" data-amount="-1" aria-label="出点前移半拍">−</button>
+                <button data-nudge="out" data-amount="1" aria-label="出点后移半拍">+</button>
+              </div>
+            </div>
+            <button class="tool-action" id="btn-play-region" title="从入点预听">
+              <span>PREVIEW</span>
+              <svg><use href="#i-play"></use></svg>
+            </button>
+          </div>
+        </section>
+
+        <aside class="panel practice-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">PRACTICE PLAN</span>
+              <h2>速度阶梯</h2>
+            </div>
+            <span class="count-badge" id="ladder-count">10</span>
+          </div>
+
+          <div class="setting-block">
+            <div class="setting-label"><span>进入循环前</span><b>COUNT-IN</b></div>
+            <div class="segmented" id="countin-control">
+              <button data-countin="0">OFF</button>
+              <button data-countin="1" class="active">1 BAR</button>
+              <button data-countin="2">2 BARS</button>
+            </div>
+            <p class="setting-hint">首轮速度下播放完整预备拍，再进入循环。</p>
+          </div>
+
+          <div class="ladder-heading">
+            <span>ROUND TEMPO</span>
+            <div class="ladder-actions">
+              <button id="btn-ladder-preset" title="应用渐快阶梯">BUILD</button>
+              <button id="btn-add-step" title="添加一轮"><svg><use href="#i-plus"></use></svg></button>
+            </div>
+          </div>
+          <div class="ladder-list" id="ladder-list"></div>
+
+          <div class="practice-options">
+            <label class="switch-row">
+              <span><b>节拍器脉冲</b><small>COUNT-IN + LOOP</small></span>
+              <input type="checkbox" id="click-toggle" checked />
+              <i></i>
+            </label>
+          </div>
+
+          <div class="next-change">
+            <span class="eyebrow">NEXT COMMIT</span>
+            <div><strong id="next-change-bpm">76 BPM</strong><span id="next-change-note">第 2 轮开始时</span></div>
+          </div>
+
+          <button class="verify-strip" id="verify-strip">
+            <span class="verify-icon"><svg><use href="#i-check"></use></svg></span>
+            <span><b>时基校验</b><small id="verify-summary">10TH PULSE · SHORT LOOP · HOT TEMPO</small></span>
+            <span class="verify-pass" id="verify-pass">PASS</span>
+          </button>
+        </aside>
+      </main>
+
+      <footer class="transport">
+        <div class="transport-main">
+          <button class="transport-button" id="btn-rewind" title="回到开头 (R)">
+            <svg><use href="#i-rewind"></use></svg>
+          </button>
+          <button class="play-button" id="btn-play" title="播放 / 暂停 (Space)">
+            <svg class="play-icon"><use href="#i-play"></use></svg>
+            <svg class="pause-icon"><use href="#i-pause"></use></svg>
+          </button>
+          <button class="transport-button" id="btn-stop" title="停止">
+            <svg><use href="#i-stop"></use></svg>
+          </button>
+          <div class="position-readout">
+            <span class="pulse-clock" id="position-pulse">001:1:00</span>
+            <span class="time-clock" id="position-time">00:00.000</span>
+          </div>
+        </div>
+
+        <div class="transport-timeline">
+          <div class="round-line">
+            <span id="round-badge">ROUND 01 / 10</span>
+            <span class="cycle-badge" id="cycle-badge">CYCLE 01</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+            <div class="progress-markers" id="progress-markers"></div>
+          </div>
+          <div class="tempo-line">
+            <span><b id="current-bpm">72</b> BPM <i id="tempo-lock">PITCH LOCK</i></span>
+            <span class="next-tempo">NEXT <b id="next-bpm">76</b></span>
+          </div>
+        </div>
+
+        <div class="transport-end">
+          <div class="master-volume">
+            <svg><use href="#i-volume"></use></svg>
+            <input id="master-volume" type="range" min="-32" max="0" value="-6" step="1" />
+            <span id="volume-label">−6 dB</span>
+          </div>
+          <button class="shortcut-hint" id="btn-help">KEYS <b>SPACE</b> PLAY <b>I / O</b> SET</button>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal-backdrop" id="verify-modal" aria-hidden="true">
+      <section class="verify-modal" role="dialog" aria-modal="true" aria-labelledby="verify-title">
+        <button class="modal-close" data-close-modal aria-label="关闭"><svg><use href="#i-close"></use></svg></button>
+        <span class="eyebrow">DETERMINISTIC TIMING</span>
+        <h2 id="verify-title">循环时基校验</h2>
+        <p class="modal-intro">所有边界由同一条绝对时间轴计算，不从上一次回调时间累加。以下结果实时复用于正在载入的素材。</p>
+        <div class="check-list" id="check-list"></div>
+        <div class="verify-formula">
+          <span>ROUND(n) START</span>
+          <b>ANCHOR + COUNT-IN + Σ LOOP DURATIONS</b>
+        </div>
+        <div class="modal-foot"><span>PITCH LOCK: WSOLA</span><span>SCHEDULER: ABSOLUTE SAMPLE TIME</span></div>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="shortcuts-modal" aria-hidden="true">
+      <section class="shortcuts-modal" role="dialog" aria-modal="true" aria-labelledby="shortcuts-title">
+        <button class="modal-close" data-close-modal aria-label="关闭"><svg><use href="#i-close"></use></svg></button>
+        <span class="eyebrow">TRANSPORT MAP</span>
+        <h2 id="shortcuts-title">键盘快捷键</h2>
+        <div class="shortcut-grid">
+          <span>播放 / 停止</span><kbd>SPACE</kbd>
+          <span>在播放头设置入点</span><kbd>I</kbd>
+          <span>在播放头设置出点</span><kbd>O</kbd>
+          <span>入 / 出点微调半拍</span><kbd>[ / ]</kbd>
+          <span>回到循环开头</span><kbd>R</kbd>
+          <span>下一轮速度临时 +2</span><kbd>↑</kbd>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

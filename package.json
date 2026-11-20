@@ -1,0 +1,11 @@
+{
+  "name": "looproom-practice",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "generate:samples": "node scripts/generate-samples.mjs",
+    "test": "node --test tests/*.test.js"
+  }
+}

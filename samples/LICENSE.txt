@@ -1,0 +1,8 @@
+Blue Hour and Neon Current
+==========================
+
+These two audio files were generated entirely by scripts/generate-samples.mjs in
+this repository. To the extent possible under law, the author dedicates them to
+the public domain under CC0 1.0.
+
+https://creativecommons.org/publicdomain/zero/1.0/
