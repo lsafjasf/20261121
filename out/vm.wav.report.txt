@@ -1,0 +1,8 @@
+sample_rate=48000
+frames=432000
+low_channel=1
+gain=3.99989736
+delay=0.312544
+clip_thresh=0.995000
+regions=1
+region=117440,117584,144184,144328
