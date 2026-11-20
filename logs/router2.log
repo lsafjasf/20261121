@@ -1,0 +1,49 @@
+Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+JackClient::AcquireSelfRealTime error
+[fade_router] ready: in_a/in_b -> headphones+recorder, fade=480 samples (10 ms)
+[fade_router] xruns=0 fades=0 route=(none) -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=0 fades=3 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=0 fades=7 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] connect failed: vdevX:out (device gone?)
+[fade_router] xruns=0 fades=10 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=0 fades=13 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=0 fades=16 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=3 fades=19 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=4 fades=23 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=4 fades=26 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=4 fades=30 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] migrate -> vdevX:out (fade 10 ms)
+[fade_router] xruns=4 fades=31 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] xruns=4 fades=31 route=vdevX:out -> [headphones, recorder] STABLE
+[fade_router] exit: total xruns=4 fades=31

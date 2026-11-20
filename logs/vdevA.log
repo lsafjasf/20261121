@@ -1,0 +1,4 @@
+Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+JackClient::AcquireSelfRealTime error
+[vdevA] done

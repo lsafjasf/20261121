@@ -1,0 +1,5 @@
+Cannot lock down 107341340 byte memory area (Cannot allocate memory)
+Cannot use real-time scheduling (RR/5) (1: Operation not permitted)
+JackClient::AcquireSelfRealTime error
+[rec] connected: fade_router:recorder -> rec:in, recording 11.0s to logs/rec1.raw
+[rec] wrote 531456 frames, ring overruns=0
