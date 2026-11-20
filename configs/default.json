@@ -1,0 +1,32 @@
+{
+  "video": {
+    "width": 960,
+    "height": 540,
+    "fps": 30,
+    "duration_s": 12.0,
+    "focal_scale": 1.25
+  },
+  "imu": {
+    "rate_hz": 400,
+    "time_offset_s": 0.12,
+    "bias_dps": [-1.2, 0.8, 0.5],
+    "noise_std_dps": 0.35,
+    "saturation_dps": 500
+  },
+  "calibration": {
+    "window_sec": 1.0,
+    "offset_search_sec": 0.4,
+    "offset_step_ms": 5.0,
+    "min_tracks": 25,
+    "min_inlier_ratio": 0.55,
+    "max_reproj_error_px": 2.2,
+    "amplitude_ratio_bounds": [0.55, 1.85],
+    "max_axis_disagree_deg": 25.0,
+    "post_whip_cooldown_s": 0.9
+  },
+  "stabilization": {
+    "smoothing_sigma_s": 0.35,
+    "crop_smooth_sigma_s": 0.4,
+    "fusion_vision_weight": 0.85
+  }
+}
