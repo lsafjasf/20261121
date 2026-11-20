@@ -1,0 +1,84 @@
+{
+  "audio_file": "samples/museum_sample.wav",
+  "sample_rate": 11025,
+  "duration_seconds": 18.467574,
+  "speed_factor": 1.018,
+  "downsample_from": 48000,
+  "reverb_wet": 0.23,
+  "snr_db": 27.0,
+  "frame_seconds": 0.678,
+  "truth": [
+    {
+      "index": 0,
+      "asset_id": "1042",
+      "label": "CN-1042",
+      "title": "青釉莲纹罐",
+      "source_seconds": 2.2,
+      "expected_seconds": 2.1611,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 1,
+      "asset_id": "7781",
+      "label": "CN-7781",
+      "title": "铜鎏金瑞兽镇",
+      "source_seconds": 4.3,
+      "expected_seconds": 4.223969,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 2,
+      "asset_id": "1042",
+      "label": "CN-1042",
+      "title": "青釉莲纹罐",
+      "source_seconds": 7.15,
+      "expected_seconds": 7.023576,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 3,
+      "asset_id": "7781",
+      "label": "CN-7781",
+      "title": "铜鎏金瑞兽镇",
+      "source_seconds": 9.2,
+      "expected_seconds": 9.037328,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 4,
+      "asset_id": "1042",
+      "label": "CN-1042",
+      "title": "青釉莲纹罐",
+      "source_seconds": 12.35,
+      "expected_seconds": 12.131631,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 5,
+      "asset_id": "7781",
+      "label": "CN-7781",
+      "title": "铜鎏金瑞兽镇",
+      "source_seconds": 14.4,
+      "expected_seconds": 14.145383,
+      "damaged": false,
+      "expected_kind": "hit"
+    },
+    {
+      "index": 6,
+      "asset_id": "1042",
+      "label": "CN-1042",
+      "title": "青釉莲纹罐",
+      "source_seconds": 16.55,
+      "expected_seconds": 16.257367,
+      "damaged": true,
+      "expected_kind": "candidate"
+    }
+  ],
+  "generated_at": "2026-11-20T22:17:21.745671+00:00",
+  "report_file": "reports/museum_sample_report.json"
+}

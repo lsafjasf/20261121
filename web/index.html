@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111512">
+  <title>馆藏声纹 · 离线资产识别</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="馆藏声纹首页">
+        <span class="brand-mark"><i></i><i></i><i></i><i></i><i></i></span>
+        <span>
+          <strong>馆藏声纹</strong>
+          <small>ACOUSTIC ASSET REGISTRY</small>
+        </span>
+      </a>
+      <div class="top-meta">
+        <span class="status-pill"><span class="status-dot"></span>本地引擎</span>
+        <span class="top-divider"></span>
+        <span id="engine-state">MUSE-FSK / 1</span>
+        <button class="icon-button" id="reload-sample" title="重新载入样例" aria-label="重新载入样例">↻</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel source-panel">
+          <div class="panel-kicker">01 / 输入</div>
+          <h2>识别工作台</h2>
+          <p class="muted">音频始终留在此机。上传、解码、校验均在本地完成。</p>
+          <button class="primary-button" id="sample-button">
+            <span>载入馆藏样例</span><span class="arrow">↗</span>
+          </button>
+          <div class="or"><span>或分析录音</span></div>
+          <label class="dropzone" id="dropzone" for="audio-file">
+            <input type="file" id="audio-file" accept=".wav,audio/wav">
+            <span class="wave-icon">∿</span>
+            <strong>拖入 WAV 录音</strong>
+            <small>PCM 8 / 16 / 24 / 32 bit</small>
+          </label>
+          <label class="mini-upload" for="manifest-file">
+            <span>真值清单（可选）</span>
+            <input type="file" id="manifest-file" accept=".json,application/json">
+            <em id="manifest-label">未选择</em>
+          </label>
+          <button class="secondary-button" id="analyze-button" disabled>开始离线分析</button>
+          <div class="progress" id="progress" hidden><span></span></div>
+        </section>
+
+        <section class="panel registry-panel">
+          <div class="panel-kicker">02 / 登记库</div>
+          <div class="registry-head">
+            <h2>已知馆藏编号</h2><span id="registry-count">02</span>
+          </div>
+          <div id="registry-list" class="registry-list"></div>
+        </section>
+
+        <section class="protocol-note">
+          <div class="panel-kicker">帧结构</div>
+          <ol class="frame-list">
+            <li><span>引导</span><b>2.0 kHz</b><em>100 ms</em></li>
+            <li><span>同步</span><b>16 bit</b><em>B6D3</em></li>
+            <li><span>数据</span><b>24 bit</b><em>版本 + 编号</em></li>
+            <li><span>校验</span><b>CRC-16</b><em>CCITT</em></li>
+          </ol>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div class="report-heading">
+          <div>
+            <div class="eyebrow">DETECTION LEDGER <span id="report-stamp">—</span></div>
+            <h1 id="report-title">馆藏样例 / 混响录音</h1>
+            <p id="report-subtitle">双载波 FSK 编码标记 · 重复出现检测</p>
+          </div>
+          <div class="audio-control">
+            <button id="play-button" class="play-button" aria-label="播放或暂停">▶</button>
+            <div class="audio-readout">
+              <span id="audio-time">00:00.000</span>
+              <div class="scrub"><div id="scrub-fill"></div></div>
+              <span id="audio-duration">00:00.000</span>
+            </div>
+            <a id="audio-download" class="download-link" href="/samples/museum_sample.wav" download>WAV ↓</a>
+          </div>
+        </div>
+        <audio id="audio-player" preload="metadata"></audio>
+
+        <section class="metrics" aria-label="检测摘要">
+          <article class="metric metric-hit">
+            <span>确认命中</span><strong id="metric-hits">—</strong><small>CRC 通过</small>
+          </article>
+          <article class="metric metric-candidate">
+            <span>损坏候选</span><strong id="metric-candidates">—</strong><small>禁止提升</small>
+          </article>
+          <article class="metric metric-fp">
+            <span>误报</span><strong id="metric-fp">—</strong><small>无真值对应</small>
+          </article>
+          <article class="metric metric-time">
+            <span>时标偏差</span><strong id="metric-offset">—</strong><small>平均绝对误差</small>
+          </article>
+        </section>
+
+        <section class="panel timeline-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="panel-kicker">03 / 检测时轴</div>
+              <h2>录音中的重复标记</h2>
+            </div>
+            <div class="legend">
+              <span><i class="dot hit"></i>确认命中</span>
+              <span><i class="dot candidate"></i>候选</span>
+              <span><i class="dot truth"></i>真值</span>
+            </div>
+          </div>
+          <div class="timeline-wrap">
+            <canvas id="timeline" aria-label="音频波形与标记位置"></canvas>
+            <div id="timeline-labels" class="timeline-labels"></div>
+          </div>
+          <div class="damage-strip" id="damage-strip"></div>
+        </section>
+
+        <section class="panel results-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="panel-kicker">04 / 证据账本</div>
+              <h2>逐条验证结果</h2>
+            </div>
+            <span class="table-hint">点击行查看完整判据</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>位置</th><th>判定</th><th>馆藏编号</th><th>载波</th><th>同步</th><th>CRC-16</th><th>时标偏差</th></tr>
+              </thead>
+              <tbody id="result-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel evidence-panel" id="evidence">
+          <div class="evidence-head">
+            <div>
+              <div class="panel-kicker">05 / 分层校验</div>
+              <h2 id="evidence-title">选择一条检测结果</h2>
+            </div>
+            <span class="verdict" id="evidence-verdict">—</span>
+          </div>
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <div class="evidence-label"><span>A</span>载波锁定</div>
+              <div class="carrier-readout">
+                <strong id="carrier-leader">—</strong><small>引导载波</small>
+              </div>
+              <div class="carrier-bars" id="carrier-bars"></div>
+              <dl class="evidence-facts" id="carrier-facts"></dl>
+            </article>
+            <article class="evidence-card">
+              <div class="evidence-label"><span>B</span>同步字</div>
+              <div class="sync-word" id="sync-word">—</div>
+              <div class="bit-grid" id="sync-bits"></div>
+              <dl class="evidence-facts" id="sync-facts"></dl>
+            </article>
+            <article class="evidence-card">
+              <div class="evidence-label"><span>C</span>数据校验</div>
+              <div class="hex-body" id="data-bits">—</div>
+              <div class="crc-row">
+                <span>期望 <b id="crc-expected">—</b></span>
+                <span>实收 <b id="crc-received">—</b></span>
+              </div>
+              <div class="candidate-note" id="candidate-note" hidden></div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="report-footer">
+          <p>判定规则：同步 Hamming ≤ 3 才进入数据解码；只有 CRC-16 通过且编号已登记时才确认为命中。任何损坏记录仅进入候选，不改写资产账本。</p>
+          <span id="footer-meta">OFFLINE / NO NETWORK</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="sample-report.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
