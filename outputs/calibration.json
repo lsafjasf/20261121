@@ -1,0 +1,365 @@
+{
+  "model": "asymmetric switched first-order response",
+  "fps": 24,
+  "instability_gain_threshold": 6.5,
+  "channels": {
+    "R": {
+      "alpha_rise": 0.49679303393567104,
+      "alpha_fall": 0.6906402819126336,
+      "tau_rise_frames": 1.4561260552084667,
+      "tau_fall_frames": 0.8523328678601861,
+      "tau_rise_ms": 60.67191896701945,
+      "tau_fall_ms": 35.51386949417442
+    },
+    "G": {
+      "alpha_rise": 0.27497501334178215,
+      "alpha_fall": 0.4348753724445786,
+      "tau_rise_frames": 3.109944367027127,
+      "tau_fall_frames": 1.7522064892777591,
+      "tau_rise_ms": 129.58101529279693,
+      "tau_fall_ms": 73.00860371990663
+    },
+    "B": {
+      "alpha_rise": 0.13664620066092528,
+      "alpha_fall": 0.2166923445965319,
+      "tau_rise_frames": 6.805929253501071,
+      "tau_fall_frames": 4.094505420706628,
+      "tau_rise_ms": 283.5803855625446,
+      "tau_fall_ms": 170.6043925294428
+    }
+  },
+  "global_fits": [
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "R",
+      "transition": "rise",
+      "alpha": 0.49679303393567104,
+      "tau_frames": 1.4561260552084667,
+      "samples": 5992796,
+      "fit_rmse": 0.008483172963095618,
+      "profile_rmse": 0.007395560603148194
+    },
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "R",
+      "transition": "fall",
+      "alpha": 0.6906402819126336,
+      "tau_frames": 0.8523328678601861,
+      "samples": 4218167,
+      "fit_rmse": 0.009105385979684792,
+      "profile_rmse": 0.020040432461013807
+    },
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "G",
+      "transition": "rise",
+      "alpha": 0.27497501334178215,
+      "tau_frames": 3.109944367027127,
+      "samples": 8538284,
+      "fit_rmse": 0.004502972217072903,
+      "profile_rmse": 0.005522376586212516
+    },
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "G",
+      "transition": "fall",
+      "alpha": 0.4348753724445786,
+      "tau_frames": 1.7522064892777591,
+      "samples": 8234961,
+      "fit_rmse": 0.004221889524496724,
+      "profile_rmse": 0.010870634979259096
+    },
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "B",
+      "transition": "rise",
+      "alpha": 0.13664620066092528,
+      "tau_frames": 6.805929253501071,
+      "samples": 10517040,
+      "fit_rmse": 0.004566259190271614,
+      "profile_rmse": 0.0009899109489103475
+    },
+    {
+      "scope": "global",
+      "direction": "all",
+      "channel": "B",
+      "transition": "fall",
+      "alpha": 0.2166923445965319,
+      "tau_frames": 4.094505420706628,
+      "samples": 16111442,
+      "fit_rmse": 0.0041805658797464985,
+      "profile_rmse": 0.0047925409544695655
+    }
+  ],
+  "directional_fits": [
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "R",
+      "transition": "rise",
+      "alpha": 0.4714914171795783,
+      "tau_frames": 1.5681447481305288,
+      "samples": 901080,
+      "fit_rmse": 0.0035793345705428586,
+      "profile_rmse": 0.007328040997172798
+    },
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "R",
+      "transition": "fall",
+      "alpha": 0.6635571160994843,
+      "tau_frames": 0.9179980942881296,
+      "samples": 669581,
+      "fit_rmse": 0.0033134916651638507,
+      "profile_rmse": 0.02222175097362901
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "R",
+      "transition": "rise",
+      "alpha": 0.5194180137767521,
+      "tau_frames": 1.3647080845927755,
+      "samples": 901018,
+      "fit_rmse": 0.003514347465699939,
+      "profile_rmse": 0.010023605868277607
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "R",
+      "transition": "fall",
+      "alpha": 0.7139432467373231,
+      "tau_frames": 0.7989996205999681,
+      "samples": 611733,
+      "fit_rmse": 0.0032404499996647506,
+      "profile_rmse": 0.02636372826025539
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "R",
+      "transition": "rise",
+      "alpha": 0.48430228574757106,
+      "tau_frames": 1.5100390941789474,
+      "samples": 901440,
+      "fit_rmse": 0.003549225974851656,
+      "profile_rmse": 0.007772816755551883
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "R",
+      "transition": "fall",
+      "alpha": 0.6773645991962439,
+      "tau_frames": 0.8839916666731363,
+      "samples": 646153,
+      "fit_rmse": 0.003307869598143768,
+      "profile_rmse": 0.018901635251894353
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "R",
+      "transition": "rise",
+      "alpha": 0.5120196840095008,
+      "tau_frames": 1.3937666656500474,
+      "samples": 901421,
+      "fit_rmse": 0.003519515708494458,
+      "profile_rmse": 0.009418394240317837
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "R",
+      "transition": "fall",
+      "alpha": 0.7063890050068381,
+      "tau_frames": 0.8159937822988675,
+      "samples": 618409,
+      "fit_rmse": 0.0032480542015423768,
+      "profile_rmse": 0.021941599583957437
+    },
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "G",
+      "transition": "rise",
+      "alpha": 0.26845216473487654,
+      "tau_frames": 3.1990513684625106,
+      "samples": 901080,
+      "fit_rmse": 0.00389164802231225,
+      "profile_rmse": 0.0029364066291884387
+    },
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "G",
+      "transition": "fall",
+      "alpha": 0.42583816693120974,
+      "tau_frames": 1.8023084509851026,
+      "samples": 1078713,
+      "fit_rmse": 0.0036602956677507918,
+      "profile_rmse": 0.010946904814292394
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "G",
+      "transition": "rise",
+      "alpha": 0.2825572084431591,
+      "tau_frames": 3.0114851942621885,
+      "samples": 901080,
+      "fit_rmse": 0.003872979131789251,
+      "profile_rmse": 0.0032602405841792377
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "G",
+      "transition": "fall",
+      "alpha": 0.44522227280557614,
+      "tau_frames": 1.697251889693937,
+      "samples": 1089832,
+      "fit_rmse": 0.0036161411807843014,
+      "profile_rmse": 0.013278801004960776
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "G",
+      "transition": "rise",
+      "alpha": 0.2776742706702596,
+      "tau_frames": 3.07428304184619,
+      "samples": 901440,
+      "fit_rmse": 0.0038760094451112904,
+      "profile_rmse": 0.0030804364595205585
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "G",
+      "transition": "fall",
+      "alpha": 0.43856402182977683,
+      "tau_frames": 1.7323290680594987,
+      "samples": 1108826,
+      "fit_rmse": 0.003621651934681224,
+      "profile_rmse": 0.010228003591393597
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "G",
+      "transition": "rise",
+      "alpha": 0.27078317969736343,
+      "tau_frames": 3.1667198551909963,
+      "samples": 901440,
+      "fit_rmse": 0.0038987746163021554,
+      "profile_rmse": 0.0032004847229069964
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "G",
+      "transition": "fall",
+      "alpha": 0.42895189654820187,
+      "tau_frames": 1.7848160494662624,
+      "samples": 1123128,
+      "fit_rmse": 0.003643615253165982,
+      "profile_rmse": 0.00983416527028396
+    },
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "B",
+      "transition": "rise",
+      "alpha": 0.13171265599949422,
+      "tau_frames": 7.080519358848447,
+      "samples": 901080,
+      "fit_rmse": 0.0041779226498171815,
+      "profile_rmse": 0.001974329618532513
+    },
+    {
+      "scope": "directional",
+      "direction": "right",
+      "channel": "B",
+      "transition": "fall",
+      "alpha": 0.20919355955210292,
+      "tau_frames": 4.260721317486336,
+      "samples": 1561321,
+      "fit_rmse": 0.0040773857811751656,
+      "profile_rmse": 0.032798230151394527
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "B",
+      "transition": "rise",
+      "alpha": 0.14190339150941353,
+      "tau_frames": 6.5342996798520705,
+      "samples": 901080,
+      "fit_rmse": 0.004175865479369646,
+      "profile_rmse": 0.0017371395825487334
+    },
+    {
+      "scope": "directional",
+      "direction": "left",
+      "channel": "B",
+      "transition": "fall",
+      "alpha": 0.22449093841101397,
+      "tau_frames": 3.9333592713801218,
+      "samples": 1874882,
+      "fit_rmse": 0.0040367889083549905,
+      "profile_rmse": 0.005759948176662127
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "B",
+      "transition": "rise",
+      "alpha": 0.13415362241671935,
+      "tau_frames": 6.942141039800056,
+      "samples": 901440,
+      "fit_rmse": 0.004194044154421108,
+      "profile_rmse": 0.00197528464096871
+    },
+    {
+      "scope": "directional",
+      "direction": "down",
+      "channel": "B",
+      "transition": "fall",
+      "alpha": 0.2128338696718148,
+      "tau_frames": 4.178576311373425,
+      "samples": 2015260,
+      "fit_rmse": 0.0040551109969759495,
+      "profile_rmse": 0.0063490179484117885
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "B",
+      "transition": "rise",
+      "alpha": 0.13922367304071095,
+      "tau_frames": 6.670197817729061,
+      "samples": 901440,
+      "fit_rmse": 0.004175398058291161,
+      "profile_rmse": 0.0017271805078164831
+    },
+    {
+      "scope": "directional",
+      "direction": "up",
+      "channel": "B",
+      "transition": "fall",
+      "alpha": 0.22046593977812304,
+      "tau_frames": 4.015114553788189,
+      "samples": 1875243,
+      "fit_rmse": 0.004045983701477346,
+      "profile_rmse": 0.005623833484533003
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "output_dir": "/home/hj/userfeedback/uid4-0054/outputs",
+  "elapsed_seconds": 35.74035229199944,
+  "ghost_rms_original": 55.88619613647461,
+  "ghost_rms_restored": 3.980071544647217,
+  "overshoot_rms_original": 51.96912384033203,
+  "overshoot_rms_restored": 0.80989670753479,
+  "report": "/home/hj/userfeedback/uid4-0054/outputs/report.html",
+  "metrics": "/home/hj/userfeedback/uid4-0054/outputs/metrics.json"
+}

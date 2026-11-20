@@ -1,0 +1,93 @@
+[
+  {
+    "name": "black_reset_0",
+    "start_frame": 0,
+    "end_frame": 8,
+    "kind": "reset",
+    "direction": null
+  },
+  {
+    "name": "flash_rise_0",
+    "start_frame": 8,
+    "end_frame": 28,
+    "kind": "flash",
+    "direction": null
+  },
+  {
+    "name": "flash_fall_0",
+    "start_frame": 28,
+    "end_frame": 46,
+    "kind": "flash",
+    "direction": null
+  },
+  {
+    "name": "flash_rise_1",
+    "start_frame": 46,
+    "end_frame": 66,
+    "kind": "flash",
+    "direction": null
+  },
+  {
+    "name": "flash_fall_1",
+    "start_frame": 66,
+    "end_frame": 84,
+    "kind": "flash",
+    "direction": null
+  },
+  {
+    "name": "sweep_right",
+    "start_frame": 84,
+    "end_frame": 106,
+    "kind": "sweep",
+    "direction": "right"
+  },
+  {
+    "name": "sweep_right_reset",
+    "start_frame": 106,
+    "end_frame": 110,
+    "kind": "reset",
+    "direction": null
+  },
+  {
+    "name": "sweep_left",
+    "start_frame": 110,
+    "end_frame": 132,
+    "kind": "sweep",
+    "direction": "left"
+  },
+  {
+    "name": "sweep_left_reset",
+    "start_frame": 132,
+    "end_frame": 136,
+    "kind": "reset",
+    "direction": null
+  },
+  {
+    "name": "sweep_down",
+    "start_frame": 136,
+    "end_frame": 158,
+    "kind": "sweep",
+    "direction": "down"
+  },
+  {
+    "name": "sweep_down_reset",
+    "start_frame": 158,
+    "end_frame": 162,
+    "kind": "reset",
+    "direction": null
+  },
+  {
+    "name": "sweep_up",
+    "start_frame": 162,
+    "end_frame": 184,
+    "kind": "sweep",
+    "direction": "up"
+  },
+  {
+    "name": "sweep_up_reset",
+    "start_frame": 184,
+    "end_frame": 190,
+    "kind": "reset",
+    "direction": null
+  }
+]
