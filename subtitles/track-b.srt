@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:06,000
+Hello everyone, online and on-site
+
+2
+00:00:06,000 --> 00:00:12,000
+Welcome to the live subtitling demo
+
+3
+00:00:12,000 --> 00:00:18,000
+This is a real-time subtitle operations system
+
+4
+00:00:18,000 --> 00:00:24,000
+The desk supports pause, skip and manual delay
+
+5
+00:00:24,000 --> 00:00:30,000
+Next we demonstrate a manual delay
+
+6
+00:00:30,000 --> 00:00:36,000
+Viewer subtitles are shifted back two seconds
+
+7
+00:00:36,000 --> 00:00:42,000
+The screen is cleared temporarily for viewers
+
+8
+00:00:42,000 --> 00:00:48,000
+Clearing ends and subtitles resume normally
+
+9
+00:00:48,000 --> 00:00:54,000
+Every control syncs on the director clock
+
+10
+00:00:54,000 --> 00:01:00,000
+That ends the demo. Thank you for watching

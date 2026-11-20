@@ -1,0 +1,14 @@
+{
+  "name": "live-subtitle-director",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "start:fault": "ENABLE_FAULT_API=1 node server/index.js",
+    "measure": "node measure/measure.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}

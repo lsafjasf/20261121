@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>现场字幕 · 导播台</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body class="director-body">
+  <header class="topbar">
+    <h1>字幕导播台</h1>
+    <div id="status" class="status-pill">连接中…</div>
+  </header>
+
+  <section class="transport panel">
+    <button id="play" class="primary">播放</button>
+    <button id="pause">暂停</button>
+    <button id="prev">上一条</button>
+    <button id="next" class="primary">跳词 →</button>
+    <label class="seek-box">跳转(ms)
+      <input id="seek-input" type="number" step="100" min="0" placeholder="时间轴位置">
+    </label>
+    <button id="seek-go">跳转</button>
+  </section>
+
+  <section class="panel">
+    <h2>人工推迟（观众整体延后）</h2>
+    <div class="row">
+      <button data-delay="-1000">−1s</button>
+      <button data-delay="-500">−0.5s</button>
+      <button data-delay="500">+0.5s</button>
+      <button data-delay="1000">+1s</button>
+      <button data-delay="3000">+3s</button>
+      <label class="seek-box">设置推迟(ms)
+        <input id="delay-input" type="number" step="100" min="0">
+      </label>
+      <button id="delay-set">应用</button>
+      <button id="delay-reset">清零</button>
+      <span id="delay-value" class="badge"></span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>临时清屏</h2>
+    <div class="row">
+      <button id="clear-hold" class="warn">清屏 3 秒</button>
+      <button id="clear-indef" class="warn">持续清屏</button>
+      <button id="clear-off">恢复字幕</button>
+      <span id="clear-value" class="badge"></span>
+    </div>
+  </section>
+
+  <section class="panel preview-panel">
+    <h2>导播预览（原始时间轴）</h2>
+    <div class="stage preview-stage">
+      <div id="cue-a" class="cue cue-primary"></div>
+      <div id="cue-b" class="cue cue-secondary"></div>
+    </div>
+    <footer class="hud">
+      <span id="clock">--:--:--</span>
+      <span id="effective">观众端: --:--:--</span>
+      <span id="seq"></span>
+    </footer>
+  </section>
+
+  <script type="module" src="/public/director.mjs"></script>
+</body>
+</html>

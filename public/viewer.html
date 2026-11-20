@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>现场字幕 · 观众端</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body class="viewer-body">
+  <div id="status" class="status-pill">连接中…</div>
+  <main class="stage">
+    <div id="cue-a" class="cue cue-primary" aria-live="polite"></div>
+    <div id="cue-b" class="cue cue-secondary" dir="auto"></div>
+    <div id="cleared" class="cleared-banner" hidden>导播已临时清屏</div>
+  </main>
+  <footer class="hud">
+    <span id="clock">--:--:--</span>
+    <span id="delay"></span>
+    <span id="lag"></span>
+  </footer>
+  <script type="module" src="/public/viewer.mjs"></script>
+</body>
+</html>
