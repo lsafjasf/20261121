@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "venue-wiring-check"
+version = "0.1.0"
+description = "Offline eight-channel test-source to loudspeaker wiring analyzer"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+venue-wiring = "venue_wiring.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["venue_wiring*"]
+
