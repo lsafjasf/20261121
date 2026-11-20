@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "experiment": "node src/experiment.js"
+  }
+}
