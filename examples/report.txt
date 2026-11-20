@@ -1,0 +1,49 @@
+文件: examples/normal_lowlight.mp4
+视频: 320x180, 25.000 fps, 200 帧, 7.960s
+时间戳: continuous, 规则率 1.000, 间隔 40.000 ms, 空洞 0, 回退 0, 缺失 0
+判定: 未检测到冻结
+说明: 未发现连续重复且无噪声的区间；局部噪声高于 0.03 时，固定机位画面静止也不判冻结。
+冻结区间: 未发现
+全局证据: 重复帧占比 0.000, 全黑占比 0.000, 有噪声帧占比 1.000, 局部噪声中位数 0.500, 基线 0.566
+
+文件: examples/repeat_lowbitrate.mp4
+视频: 320x180, 25.000 fps, 200 帧, 7.960s
+时间戳: continuous, 规则率 1.000, 间隔 40.000 ms, 空洞 0, 回退 0, 缺失 0
+判定: 检测到重复帧冻结
+说明: 检测到非黑画面连续重复，且相邻帧局部噪声低于 0.03；PTS 连续性决定这是上游重复还是时间轴异常。
+冻结区间:
+  #1 冻结 0.000s → 7.960s，持续 8.000s，帧 0-199
+    重复 199/199 次，局部噪声中位数 0.000，阈值 0.030，相对基线 N/A
+    PTS continuous，规则率 1.000，空洞 0，回退 0；原因 repeated_decoded_pixels, local_temporal_noise_absent, non_black_content, timestamps_continuous
+全局证据: 重复帧占比 1.000, 全黑占比 0.000, 有噪声帧占比 0.010, 局部噪声中位数 0.000, 基线 N/A
+
+文件: examples/black_emergency.mp4
+视频: 320x180, 25.000 fps, 200 帧, 7.960s
+时间戳: continuous, 规则率 1.000, 间隔 40.000 ms, 空洞 0, 回退 0, 缺失 0
+判定: 全黑，冻结不可判定
+说明: 画面无亮度、纹理和局部噪声，PTS 推进只能证明时间戳在走，不能证明图像仍在实时采集，因此不判冻结。
+冻结区间: 未发现
+不可判定区间:
+  #1 全黑 0.000s → 7.960s，持续 8.000s，帧 0-199
+    重复 199/199 次，局部噪声中位数 0.000，阈值 0.030，相对基线 N/A
+    PTS continuous，规则率 1.000，空洞 0，回退 0；原因 luma_below_black_floor, texture_below_black_floor, liveness_cannot_be_proven, timestamps_continuous
+    边界: 全黑且无可测局部噪声，只能证明 PTS 在推进，不能证明图像内容仍在实时采集。
+全局证据: 重复帧占比 1.000, 全黑占比 1.000, 有噪声帧占比 0.000, 局部噪声中位数 0.000, 基线 N/A
+
+文件: examples/mixed_incident.mp4
+视频: 320x180, 25.000 fps, 500 帧, 19.960s
+时间戳: continuous, 规则率 1.000, 间隔 40.000 ms, 空洞 0, 回退 0, 缺失 0
+判定: 冻结与全黑不可判定区间并存
+说明: 同时存在可判定的重复帧冻结和无法判定的全黑区间。
+冻结区间:
+  #1 冻结 5.000s → 14.960s，持续 10.000s，帧 125-374
+    重复 247/249 次，局部噪声中位数 0.000，阈值 0.030，相对基线 0.000x
+    PTS continuous，规则率 1.000，空洞 0，回退 0；原因 repeated_decoded_pixels, local_temporal_noise_absent, non_black_content, timestamps_continuous
+不可判定区间:
+  #1 全黑 15.000s → 19.960s，持续 5.000s，帧 375-499
+    重复 124/124 次，局部噪声中位数 0.000，阈值 0.030，相对基线 0.000x
+    PTS continuous，规则率 1.000，空洞 0，回退 0；原因 luma_below_black_floor, texture_below_black_floor, liveness_cannot_be_proven, timestamps_continuous
+    边界: 全黑且无可测局部噪声，只能证明 PTS 在推进，不能证明图像内容仍在实时采集。
+全局证据: 重复帧占比 0.743, 全黑占比 0.250, 有噪声帧占比 0.273, 局部噪声中位数 0.000, 基线 0.531
+
+JSON 证据已写入: examples/report.json

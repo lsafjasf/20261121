@@ -1,0 +1,489 @@
+[
+  {
+    "schema_version": "1.0",
+    "input": "examples/normal_lowlight.mp4",
+    "video": {
+      "fps": 25.0,
+      "width": 320,
+      "height": 180,
+      "frame_count": 200,
+      "duration_ms": 7960.0,
+      "timestamp_source": "PyAV decoded AVFrame.pts",
+      "pixel_source": "OpenCV VideoCapture"
+    },
+    "timestamps": {
+      "frame_count": 200,
+      "available_count": 200,
+      "missing_count": 0,
+      "nominal_delta_ms": 40.0,
+      "continuity": "continuous",
+      "regular_ratio": 1.0,
+      "gap_count": 0,
+      "backstep_count": 0,
+      "duplicate_pts_count": 0,
+      "first_ms": 0.0,
+      "last_ms": 7960.0,
+      "median_delta_ms": 40.0
+    },
+    "metrics": {
+      "baseline_local_noise": 0.566406,
+      "duplicate_fraction": 0.0,
+      "black_fraction": 0.0,
+      "noise_above_floor_fraction": 1.0,
+      "median_local_noise": 0.5
+    },
+    "config": {
+      "roi_margin": 0.02,
+      "block_size": 16,
+      "noise_sigma": 1.2,
+      "duplicate_mad": 0.15,
+      "duplicate_p99": 2.5,
+      "max_duplicate_gap": 1,
+      "noise_floor": 0.03,
+      "black_luma": 14.0,
+      "black_contrast": 6.0,
+      "black_detail": 2.0,
+      "min_freeze_ms": 1000.0,
+      "timestamp_tolerance_ms": 3.0,
+      "timestamp_tolerance_ratio": 0.2
+    },
+    "verdict": "no_freeze_detected",
+    "diagnosis": "未发现连续重复且无噪声的区间；局部噪声高于 0.03 时，固定机位画面静止也不判冻结。",
+    "intervals": [],
+    "freeze_intervals": [],
+    "black_intervals": []
+  },
+  {
+    "schema_version": "1.0",
+    "input": "examples/repeat_lowbitrate.mp4",
+    "video": {
+      "fps": 25.0,
+      "width": 320,
+      "height": 180,
+      "frame_count": 200,
+      "duration_ms": 7960.0,
+      "timestamp_source": "PyAV decoded AVFrame.pts",
+      "pixel_source": "OpenCV VideoCapture"
+    },
+    "timestamps": {
+      "frame_count": 200,
+      "available_count": 200,
+      "missing_count": 0,
+      "nominal_delta_ms": 40.0,
+      "continuity": "continuous",
+      "regular_ratio": 1.0,
+      "gap_count": 0,
+      "backstep_count": 0,
+      "duplicate_pts_count": 0,
+      "first_ms": 0.0,
+      "last_ms": 7960.0,
+      "median_delta_ms": 40.0
+    },
+    "metrics": {
+      "baseline_local_noise": null,
+      "duplicate_fraction": 1.0,
+      "black_fraction": 0.0,
+      "noise_above_floor_fraction": 0.01005,
+      "median_local_noise": 0.0
+    },
+    "config": {
+      "roi_margin": 0.02,
+      "block_size": 16,
+      "noise_sigma": 1.2,
+      "duplicate_mad": 0.15,
+      "duplicate_p99": 2.5,
+      "max_duplicate_gap": 1,
+      "noise_floor": 0.03,
+      "black_luma": 14.0,
+      "black_contrast": 6.0,
+      "black_detail": 2.0,
+      "min_freeze_ms": 1000.0,
+      "timestamp_tolerance_ms": 3.0,
+      "timestamp_tolerance_ratio": 0.2
+    },
+    "verdict": "frozen_repeat_detected",
+    "diagnosis": "检测到非黑画面连续重复，且相邻帧局部噪声低于 0.03；PTS 连续性决定这是上游重复还是时间轴异常。",
+    "intervals": [
+      {
+        "status": "frozen",
+        "start_frame": 0,
+        "end_frame": 199,
+        "start_ms": 0.0,
+        "end_ms": 7960.0,
+        "duration_ms": 8000.0,
+        "evidence": {
+          "frame_count": 200,
+          "duplicate_transitions": 199,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": null,
+          "local_noise_ratio": null,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 24.8534,
+          "detail_median": 6.2418,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": true,
+          "cause_hint": "upstream_repeated_frame",
+          "reason_codes": [
+            "repeated_decoded_pixels",
+            "local_temporal_noise_absent",
+            "non_black_content",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ],
+    "freeze_intervals": [
+      {
+        "status": "frozen",
+        "start_frame": 0,
+        "end_frame": 199,
+        "start_ms": 0.0,
+        "end_ms": 7960.0,
+        "duration_ms": 8000.0,
+        "evidence": {
+          "frame_count": 200,
+          "duplicate_transitions": 199,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": null,
+          "local_noise_ratio": null,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 24.8534,
+          "detail_median": 6.2418,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": true,
+          "cause_hint": "upstream_repeated_frame",
+          "reason_codes": [
+            "repeated_decoded_pixels",
+            "local_temporal_noise_absent",
+            "non_black_content",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ],
+    "black_intervals": []
+  },
+  {
+    "schema_version": "1.0",
+    "input": "examples/black_emergency.mp4",
+    "video": {
+      "fps": 25.0,
+      "width": 320,
+      "height": 180,
+      "frame_count": 200,
+      "duration_ms": 7960.0,
+      "timestamp_source": "PyAV decoded AVFrame.pts",
+      "pixel_source": "OpenCV VideoCapture"
+    },
+    "timestamps": {
+      "frame_count": 200,
+      "available_count": 200,
+      "missing_count": 0,
+      "nominal_delta_ms": 40.0,
+      "continuity": "continuous",
+      "regular_ratio": 1.0,
+      "gap_count": 0,
+      "backstep_count": 0,
+      "duplicate_pts_count": 0,
+      "first_ms": 0.0,
+      "last_ms": 7960.0,
+      "median_delta_ms": 40.0
+    },
+    "metrics": {
+      "baseline_local_noise": null,
+      "duplicate_fraction": 1.0,
+      "black_fraction": 1.0,
+      "noise_above_floor_fraction": 0.0,
+      "median_local_noise": 0.0
+    },
+    "config": {
+      "roi_margin": 0.02,
+      "block_size": 16,
+      "noise_sigma": 1.2,
+      "duplicate_mad": 0.15,
+      "duplicate_p99": 2.5,
+      "max_duplicate_gap": 1,
+      "noise_floor": 0.03,
+      "black_luma": 14.0,
+      "black_contrast": 6.0,
+      "black_detail": 2.0,
+      "min_freeze_ms": 1000.0,
+      "timestamp_tolerance_ms": 3.0,
+      "timestamp_tolerance_ratio": 0.2
+    },
+    "verdict": "indeterminate_blackout",
+    "diagnosis": "画面无亮度、纹理和局部噪声，PTS 推进只能证明时间戳在走，不能证明图像仍在实时采集，因此不判冻结。",
+    "intervals": [
+      {
+        "status": "blackout_indeterminate",
+        "start_frame": 0,
+        "end_frame": 199,
+        "start_ms": 0.0,
+        "end_ms": 7960.0,
+        "duration_ms": 8000.0,
+        "evidence": {
+          "frame_count": 200,
+          "duplicate_transitions": 199,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": null,
+          "local_noise_ratio": null,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 0.0,
+          "detail_median": 0.0,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": false,
+          "cause_hint": "insufficient_image_information",
+          "reason_codes": [
+            "luma_below_black_floor",
+            "texture_below_black_floor",
+            "liveness_cannot_be_proven",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ],
+    "freeze_intervals": [],
+    "black_intervals": [
+      {
+        "status": "blackout_indeterminate",
+        "start_frame": 0,
+        "end_frame": 199,
+        "start_ms": 0.0,
+        "end_ms": 7960.0,
+        "duration_ms": 8000.0,
+        "evidence": {
+          "frame_count": 200,
+          "duplicate_transitions": 199,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": null,
+          "local_noise_ratio": null,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 0.0,
+          "detail_median": 0.0,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": false,
+          "cause_hint": "insufficient_image_information",
+          "reason_codes": [
+            "luma_below_black_floor",
+            "texture_below_black_floor",
+            "liveness_cannot_be_proven",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": "1.0",
+    "input": "examples/mixed_incident.mp4",
+    "video": {
+      "fps": 25.0,
+      "width": 320,
+      "height": 180,
+      "frame_count": 500,
+      "duration_ms": 19960.0,
+      "timestamp_source": "PyAV decoded AVFrame.pts",
+      "pixel_source": "OpenCV VideoCapture"
+    },
+    "timestamps": {
+      "frame_count": 500,
+      "available_count": 500,
+      "missing_count": 0,
+      "nominal_delta_ms": 40.0,
+      "continuity": "continuous",
+      "regular_ratio": 1.0,
+      "gap_count": 0,
+      "backstep_count": 0,
+      "duplicate_pts_count": 0,
+      "first_ms": 0.0,
+      "last_ms": 19960.0,
+      "median_delta_ms": 40.0
+    },
+    "metrics": {
+      "baseline_local_noise": 0.530664,
+      "duplicate_fraction": 0.743487,
+      "black_fraction": 0.25,
+      "noise_above_floor_fraction": 0.272545,
+      "median_local_noise": 0.0
+    },
+    "config": {
+      "roi_margin": 0.02,
+      "block_size": 16,
+      "noise_sigma": 1.2,
+      "duplicate_mad": 0.15,
+      "duplicate_p99": 2.5,
+      "max_duplicate_gap": 1,
+      "noise_floor": 0.03,
+      "black_luma": 14.0,
+      "black_contrast": 6.0,
+      "black_detail": 2.0,
+      "min_freeze_ms": 1000.0,
+      "timestamp_tolerance_ms": 3.0,
+      "timestamp_tolerance_ratio": 0.2
+    },
+    "verdict": "mixed_frozen_and_indeterminate_black",
+    "diagnosis": "同时存在可判定的重复帧冻结和无法判定的全黑区间。",
+    "intervals": [
+      {
+        "status": "frozen",
+        "start_frame": 125,
+        "end_frame": 374,
+        "start_ms": 5000.0,
+        "end_ms": 14960.0,
+        "duration_ms": 10000.0,
+        "evidence": {
+          "frame_count": 250,
+          "duplicate_transitions": 247,
+          "duplicate_ratio": 0.991968,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": 0.530664,
+          "local_noise_ratio": 0.0,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 24.8284,
+          "detail_median": 6.1629,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": true,
+          "cause_hint": "upstream_repeated_frame",
+          "reason_codes": [
+            "repeated_decoded_pixels",
+            "local_temporal_noise_absent",
+            "non_black_content",
+            "timestamps_continuous"
+          ]
+        }
+      },
+      {
+        "status": "blackout_indeterminate",
+        "start_frame": 375,
+        "end_frame": 499,
+        "start_ms": 15000.0,
+        "end_ms": 19960.0,
+        "duration_ms": 5000.0,
+        "evidence": {
+          "frame_count": 125,
+          "duplicate_transitions": 124,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": 0.530664,
+          "local_noise_ratio": 0.0,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 0.0,
+          "detail_median": 0.0,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": false,
+          "cause_hint": "insufficient_image_information",
+          "reason_codes": [
+            "luma_below_black_floor",
+            "texture_below_black_floor",
+            "liveness_cannot_be_proven",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ],
+    "freeze_intervals": [
+      {
+        "status": "frozen",
+        "start_frame": 125,
+        "end_frame": 374,
+        "start_ms": 5000.0,
+        "end_ms": 14960.0,
+        "duration_ms": 10000.0,
+        "evidence": {
+          "frame_count": 250,
+          "duplicate_transitions": 247,
+          "duplicate_ratio": 0.991968,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": 0.530664,
+          "local_noise_ratio": 0.0,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 24.8284,
+          "detail_median": 6.1629,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": true,
+          "cause_hint": "upstream_repeated_frame",
+          "reason_codes": [
+            "repeated_decoded_pixels",
+            "local_temporal_noise_absent",
+            "non_black_content",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ],
+    "black_intervals": [
+      {
+        "status": "blackout_indeterminate",
+        "start_frame": 375,
+        "end_frame": 499,
+        "start_ms": 15000.0,
+        "end_ms": 19960.0,
+        "duration_ms": 5000.0,
+        "evidence": {
+          "frame_count": 125,
+          "duplicate_transitions": 124,
+          "duplicate_ratio": 1.0,
+          "local_noise_median": 0.0,
+          "baseline_local_noise": 0.530664,
+          "local_noise_ratio": 0.0,
+          "noise_floor": 0.03,
+          "noise_below_floor": true,
+          "luma_mean_median": 0.0,
+          "detail_median": 0.0,
+          "timestamp_continuity": "continuous",
+          "timestamp_regular_ratio": 1.0,
+          "timestamp_gap_count": 0,
+          "timestamp_backstep_count": 0,
+          "nominal_delta_ms": 40.0,
+          "determinable": false,
+          "cause_hint": "insufficient_image_information",
+          "reason_codes": [
+            "luma_below_black_floor",
+            "texture_below_black_floor",
+            "liveness_cannot_be_proven",
+            "timestamps_continuous"
+          ]
+        }
+      }
+    ]
+  }
+]
