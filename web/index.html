@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>助听轨本地审片台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>助听轨本地审片台</h1>
+    <div id="playlist-meta" class="meta"></div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>播放清单（多卷）</h2>
+      <ul id="reel-list" class="reel-list"></ul>
+      <h2>问题分类依据</h2>
+      <ul class="legend">
+        <li><span class="tag delay">DELAY</span>互相关时延 &gt; ±60 ms</li>
+        <li><span class="tag dup">DUP_TRACK</span>整轨相关 ≥ 0.90</li>
+        <li><span class="tag dup">DUP_SEGMENT</span>卷内 4s 窗相关 ≥ 0.85</li>
+        <li><span class="tag lang">LANG_MISMATCH</span>DTMF 代号 ≠ 参考语言</li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div class="reel-head">
+        <h2 id="reel-title">请选择卷</h2>
+        <div id="reel-stats" class="meta"></div>
+      </div>
+
+      <div class="monitor">
+        <div class="monitor-btns">
+          <button id="btn-main" class="track-btn active">监听：主声轨</button>
+          <button id="btn-hi" class="track-btn">监听：助听轨</button>
+          <button id="btn-play" class="play-btn">播放</button>
+        </div>
+        <div class="monitor-pos">
+          <span id="pos-text">0.00s</span>
+          <input id="seek" type="range" min="0" max="1000" value="0">
+        </div>
+        <audio id="audio-main" preload="auto"></audio>
+        <audio id="audio-hi" preload="auto"></audio>
+      </div>
+
+      <div class="wave-wrap">
+        <canvas id="wave-main" height="90"></canvas>
+        <canvas id="wave-hi" height="90"></canvas>
+        <div id="issue-markers" class="markers"></div>
+      </div>
+
+      <h3>问题卷片段与分类依据</h3>
+      <div id="issue-cards" class="cards"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
