@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bwf_batch"
+version = "0.1.0"
+description = "Traceable BWF batch processing with editable gain envelopes"
+requires-python = ">=3.10"
+
+[project.scripts]
+bwf-batch = "bwf_batch.cli:main"
+
+[tool.setuptools]
+packages = ["bwf_batch"]
