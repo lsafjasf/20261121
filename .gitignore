@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+color-audit-output/
+artifacts/demo/
+artifacts/fixtures/
