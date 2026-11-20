@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>硬字幕对比审查 · {{TITLE}}</title>
+  <link rel="stylesheet" href="assets/review.css">
+</head>
+<body>
+  <header class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">SUBTITLE GUARD</div>
+          <div class="brand-sub">OFFLINE DOCUMENTARY QC</div>
+        </div>
+      </div>
+      <div class="top-meta">
+        <strong>{{TITLE}}</strong><br>
+        {{DURATION}} · {{FPS}} fps · {{WIDTH}}×{{HEIGHT}}
+      </div>
+    </div>
+
+    <div class="hero">
+      <div>
+        <div class="eyebrow">HARD-SUBTITLE CONTRAST AUDIT</div>
+        <h1>{{HEADLINE}}</h1>
+        <p class="lede">{{LEDE}}</p>
+      </div>
+      <aside class="rule-card">
+        <div class="rule-label">判读基线</div>
+        <div class="rule-value">{{THRESHOLD}}:1</div>
+        <div class="rule-copy">
+          WCAG 大字对比阈值，P20 笔画像素。覆盖率达到
+          <b>{{COVERAGE}}</b> 才视为可读；连续低于阈值超过
+          <b>{{TRANSIENT_MAX}}s</b> 记为持续不可读。
+        </div>
+      </aside>
+    </div>
+
+    <div class="summary-strip">{{SUMMARY}}</div>
+  </header>
+
+  <main class="shell">
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">SYNCHRONIZED EVIDENCE</div>
+          <h2>双版本逐帧回看</h2>
+        </div>
+        <div class="section-note">
+          两路视频使用同一填充掩模；右路仅增加固定宽度的黑色描边。点击时间轴或“定位”按钮，两路会同步跳到证据帧。
+        </div>
+      </div>
+      <div class="player-shell">
+        <div class="video-grid">
+          <div class="video-pane" id="pane-plain">
+            <div class="video-tag"><b>A</b>无描边 · 白字直接叠底</div>
+            <video id="video-plain" preload="auto" muted playsinline src="videos/plain.mp4"></video>
+          </div>
+          <div class="video-pane" id="pane-outlined">
+            <div class="video-tag"><b>B</b>有描边 · 同一掩模 + {{OUTLINE_WIDTH}}px 黑边</div>
+            <video id="video-outlined" preload="auto" muted playsinline src="videos/outlined.mp4"></video>
+          </div>
+        </div>
+        <div class="transport">
+          <button class="icon-btn" id="play-btn" aria-label="播放或暂停">▶</button>
+          <span class="timecode" id="timecode">00:00.00 / {{DURATION}}</span>
+          <input class="scrub" id="scrub" type="range" min="0" max="{{DURATION_SECONDS}}" value="0" step="0.001" aria-label="时间轴">
+          <select class="speed" id="speed" aria-label="播放速度">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+          <div class="legend-inline">
+            <span><i class="key plain"></i>无描边</span>
+            <span><i class="key outlined"></i>有描边</span>
+          </div>
+          <button class="ghost-btn" id="first-risk">首个风险段</button>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-title">
+            <span>字幕段前景对比 · P20（对数刻度）</span>
+            <span>{{THRESHOLD}}:1 阈值线 · 点击跳转</span>
+          </div>
+          <svg id="timeline" role="img" aria-label="双版本字幕对比时间轴"></svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="segments">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">SEGMENT FINDINGS</div>
+          <h2>逐段结论与最低对比帧</h2>
+        </div>
+        <div class="section-note">
+          原因由最低帧的局部背景亮度、闪光突增和笔画/描边通道共同判定。描边可解表示轮廓仍可辨认，不等于白字填充没有被吞没。
+        </div>
+      </div>
+      <div class="segment-list">{{SEGMENTS}}</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">METHOD</div>
+          <h2>口径与可追溯性</h2>
+        </div>
+        <div class="section-note">完整逐帧指标见 <b>metrics.csv</b>，机器可读结论见 <b>report.json</b>。</div>
+      </div>
+      <div class="method-grid">
+        <article class="method">
+          <div class="method-number">01 / MASK</div>
+          <h3>同一掩模，双版本合成</h3>
+          <p>从已知字幕 Alpha 掩模出发，无描边版只合成填充；有描边版先合成由同一填充掩模膨胀得到的描边，再合成完全相同的填充。</p>
+        </article>
+        <article class="method">
+          <div class="method-number">02 / CONTRAST</div>
+          <h3>笔画对局部背景</h3>
+          <p>在线性光空间计算相对亮度与 WCAG 对比，使用笔画核心像素的 P20 抑制抗锯齿和压缩噪点；背景由排除字幕后的局部邻域估计。</p>
+        </article>
+        <article class="method">
+          <div class="method-number">03 / TRIAGE</div>
+          <h3>短时与持续</h3>
+          <p>连续低可读帧按 {{TRANSIENT_MAX}} 秒分组。短于阈值为短时闪光风险；超过阈值且背景持续高亮则记为持续阻塞，并附带描边是否救回轮廓。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <span>离线审查报告 · 生成于 {{GENERATED_AT}} · manifest: {{MANIFEST}}</span>
+    <span>离线生成 · 无外部脚本 · 视频与指标可独立归档</span>
+  </footer>
+
+  <script src="report-data.js"></script>
+  <script src="assets/review.js"></script>
+</body>
+</html>
