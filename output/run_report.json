@@ -1,0 +1,41 @@
+{
+  "input": "data/synthetic/frames",
+  "output": "output",
+  "frame_size": [
+    320,
+    240
+  ],
+  "frame_count": 30,
+  "flash_roi": [
+    0,
+    0,
+    96,
+    32
+  ],
+  "compensation_enabled": true,
+  "search_radius_px": 16,
+  "fps": 4.0,
+  "group_count": 12,
+  "complete_groups": 8,
+  "incomplete_groups": 4,
+  "groups_missing_two_exposures": 2,
+  "undecoded_frames": 0,
+  "edge_metrics": {
+    "evaluated_group_count": 8,
+    "metric": "mean visible-edge chroma error in CbCr units (0..255 scale)",
+    "before_mean": 64.667,
+    "after_mean": 16.8269,
+    "improvement_percent": 73.98
+  },
+  "outputs": {
+    "before_video": "color_before.mp4",
+    "after_video": "color_after.mp4",
+    "comparison_video": "comparison.mp4",
+    "pair_index_csv": "pair_index.csv",
+    "pair_index_json": "pair_index.json",
+    "sync_report": "sync_report.json",
+    "edge_metrics_csv": "edge_metrics.csv",
+    "edge_metrics_json": "edge_metrics.json",
+    "edge_comparison_png": "edge_comparison.png"
+  }
+}

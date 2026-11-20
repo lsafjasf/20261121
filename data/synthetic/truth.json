@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "width": 320,
+  "height": 240,
+  "flash_roi": [
+    0,
+    0,
+    96,
+    32
+  ],
+  "flash_encoding": "left=R, center=G, right=B",
+  "illumination_gains": {
+    "R": 0.92,
+    "G": 1.0,
+    "B": 0.84
+  },
+  "groups": [
+    {
+      "group_id": 0,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0000.pgm",
+        "G": "frame_0001.pgm",
+        "B": "frame_0002.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_000.ppm",
+      "visible_mask": "truth/visible_000.pgm",
+      "occlusion_mask": "truth/occlusion_000.pgm",
+      "edge_mask": "truth/edge_000.pgm",
+      "target_mask": "truth/target_000.pgm",
+      "target_positions": {
+        "R": [
+          28,
+          78
+        ],
+        "G": [
+          35,
+          80
+        ],
+        "B": [
+          42,
+          82
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          66,
+          92,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 1,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0003.pgm",
+        "G": "frame_0004.pgm",
+        "B": "frame_0005.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_001.ppm",
+      "visible_mask": "truth/visible_001.pgm",
+      "occlusion_mask": "truth/occlusion_001.pgm",
+      "edge_mask": "truth/edge_001.pgm",
+      "target_mask": "truth/target_001.pgm",
+      "target_positions": {
+        "R": [
+          45,
+          89
+        ],
+        "G": [
+          52,
+          91
+        ],
+        "B": [
+          59,
+          93
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          35,
+          115,
+          17,
+          20
+        ],
+        [
+          83,
+          103,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 2,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0006.pgm",
+        "G": "frame_0007.pgm",
+        "B": "frame_0008.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_002.ppm",
+      "visible_mask": "truth/visible_002.pgm",
+      "occlusion_mask": "truth/occlusion_002.pgm",
+      "edge_mask": "truth/edge_002.pgm",
+      "target_mask": "truth/target_002.pgm",
+      "target_positions": {
+        "R": [
+          62,
+          100
+        ],
+        "G": [
+          69,
+          102
+        ],
+        "B": [
+          76,
+          104
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          100,
+          114,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 3,
+      "status": "missing_1:G",
+      "missing": [
+        "G"
+      ],
+      "frames": {
+        "R": "frame_0009.pgm",
+        "B": "frame_0010.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_003.ppm",
+      "visible_mask": "truth/visible_003.pgm",
+      "occlusion_mask": "truth/occlusion_003.pgm",
+      "edge_mask": "truth/edge_003.pgm",
+      "target_mask": "truth/target_003.pgm",
+      "target_positions": {
+        "R": [
+          79,
+          111
+        ],
+        "G": [
+          86,
+          113
+        ],
+        "B": [
+          93,
+          115
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          117,
+          125,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 4,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0011.pgm",
+        "G": "frame_0012.pgm",
+        "B": "frame_0013.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_004.ppm",
+      "visible_mask": "truth/visible_004.pgm",
+      "occlusion_mask": "truth/occlusion_004.pgm",
+      "edge_mask": "truth/edge_004.pgm",
+      "target_mask": "truth/target_004.pgm",
+      "target_positions": {
+        "R": [
+          96,
+          122
+        ],
+        "G": [
+          103,
+          124
+        ],
+        "B": [
+          110,
+          126
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          86,
+          148,
+          17,
+          20
+        ],
+        [
+          134,
+          136,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 5,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0014.pgm",
+        "G": "frame_0015.pgm",
+        "B": "frame_0016.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_005.ppm",
+      "visible_mask": "truth/visible_005.pgm",
+      "occlusion_mask": "truth/occlusion_005.pgm",
+      "edge_mask": "truth/edge_005.pgm",
+      "target_mask": "truth/target_005.pgm",
+      "target_positions": {
+        "R": [
+          113,
+          87
+        ],
+        "G": [
+          120,
+          89
+        ],
+        "B": [
+          127,
+          91
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          151,
+          101,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 6,
+      "status": "missing_2:GB",
+      "missing": [
+        "G",
+        "B"
+      ],
+      "frames": {
+        "R": "frame_0017.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_006.ppm",
+      "visible_mask": "truth/visible_006.pgm",
+      "occlusion_mask": "truth/occlusion_006.pgm",
+      "edge_mask": "truth/edge_006.pgm",
+      "target_mask": "truth/target_006.pgm",
+      "target_positions": {
+        "R": [
+          130,
+          98
+        ],
+        "G": [
+          137,
+          100
+        ],
+        "B": [
+          144,
+          102
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          168,
+          112,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 7,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0018.pgm",
+        "G": "frame_0019.pgm",
+        "B": "frame_0020.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_007.ppm",
+      "visible_mask": "truth/visible_007.pgm",
+      "occlusion_mask": "truth/occlusion_007.pgm",
+      "edge_mask": "truth/edge_007.pgm",
+      "target_mask": "truth/target_007.pgm",
+      "target_positions": {
+        "R": [
+          147,
+          109
+        ],
+        "G": [
+          154,
+          111
+        ],
+        "B": [
+          161,
+          113
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          137,
+          135,
+          17,
+          20
+        ],
+        [
+          185,
+          123,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 8,
+      "status": "missing_1:R",
+      "missing": [
+        "R"
+      ],
+      "frames": {
+        "G": "frame_0021.pgm",
+        "B": "frame_0022.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_008.ppm",
+      "visible_mask": "truth/visible_008.pgm",
+      "occlusion_mask": "truth/occlusion_008.pgm",
+      "edge_mask": "truth/edge_008.pgm",
+      "target_mask": "truth/target_008.pgm",
+      "target_positions": {
+        "R": [
+          164,
+          120
+        ],
+        "G": [
+          171,
+          122
+        ],
+        "B": [
+          178,
+          124
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          202,
+          134,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 9,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0023.pgm",
+        "G": "frame_0024.pgm",
+        "B": "frame_0025.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_009.ppm",
+      "visible_mask": "truth/visible_009.pgm",
+      "occlusion_mask": "truth/occlusion_009.pgm",
+      "edge_mask": "truth/edge_009.pgm",
+      "target_mask": "truth/target_009.pgm",
+      "target_positions": {
+        "R": [
+          33,
+          85
+        ],
+        "G": [
+          40,
+          87
+        ],
+        "B": [
+          47,
+          89
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          71,
+          99,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 10,
+      "status": "missing_2:RB",
+      "missing": [
+        "R",
+        "B"
+      ],
+      "frames": {
+        "G": "frame_0026.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_010.ppm",
+      "visible_mask": "truth/visible_010.pgm",
+      "occlusion_mask": "truth/occlusion_010.pgm",
+      "edge_mask": "truth/edge_010.pgm",
+      "target_mask": "truth/target_010.pgm",
+      "target_positions": {
+        "R": [
+          50,
+          96
+        ],
+        "G": [
+          57,
+          98
+        ],
+        "B": [
+          64,
+          100
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          40,
+          122,
+          17,
+          20
+        ],
+        [
+          88,
+          110,
+          24,
+          30
+        ]
+      ]
+    },
+    {
+      "group_id": 11,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": "frame_0027.pgm",
+        "G": "frame_0028.pgm",
+        "B": "frame_0029.pgm"
+      },
+      "reference_channel": "G",
+      "truth_image": "truth/truth_011.ppm",
+      "visible_mask": "truth/visible_011.pgm",
+      "occlusion_mask": "truth/occlusion_011.pgm",
+      "edge_mask": "truth/edge_011.pgm",
+      "target_mask": "truth/target_011.pgm",
+      "target_positions": {
+        "R": [
+          67,
+          107
+        ],
+        "G": [
+          74,
+          109
+        ],
+        "B": [
+          81,
+          111
+        ]
+      },
+      "known_motion": {
+        "R_to_G": [
+          7,
+          2
+        ],
+        "B_to_G": [
+          -7,
+          -2
+        ]
+      },
+      "occluders_projected_to_reference": [
+        [
+          105,
+          121,
+          24,
+          30
+        ]
+      ]
+    }
+  ]
+}

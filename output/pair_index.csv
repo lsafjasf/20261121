@@ -1,0 +1,13 @@
+group_id,status,missing_count,missing_channels,red_source_frame,green_source_frame,blue_source_frame,red_source_index,green_source_index,blue_source_index,video_frame,motion_R_to_G,motion_B_to_G,compensation_valid_ratio,edge_chroma_before,edge_chroma_after,edge_improvement_percent
+0,complete,0,,frame_0000.pgm,frame_0001.pgm,frame_0002.pgm,0,1,2,0,"7,2","-7,-2",0.9331,65.0056,16.2729,74.97
+1,complete,0,,frame_0003.pgm,frame_0004.pgm,frame_0005.pgm,3,4,5,1,"7,2","-7,-2",0.9451,64.8097,17.0729,73.66
+2,complete,0,,frame_0006.pgm,frame_0007.pgm,frame_0008.pgm,6,7,8,2,"7,2","-7,-2",0.9429,64.6977,16.2828,74.83
+3,missing_1:G,1,G,frame_0009.pgm,,frame_0010.pgm,9,,10,3,,,,,,
+4,complete,0,,frame_0011.pgm,frame_0012.pgm,frame_0013.pgm,11,12,13,4,"7,2","-7,-2",0.9491,64.2202,17.8984,72.13
+5,complete,0,,frame_0014.pgm,frame_0015.pgm,frame_0016.pgm,14,15,16,5,"7,2","-7,-2",0.9469,64.2141,16.2752,74.65
+6,missing_2:GB,2,GB,frame_0017.pgm,,,17,,,6,,,,,,
+7,complete,0,,frame_0018.pgm,frame_0019.pgm,frame_0020.pgm,18,19,20,7,"7,2","-7,-2",0.9429,64.6668,16.255,74.86
+8,missing_1:R,1,R,,frame_0021.pgm,frame_0022.pgm,,21,22,8,,,,,,
+9,complete,0,,frame_0023.pgm,frame_0024.pgm,frame_0025.pgm,23,24,25,9,"7,2","-7,-2",0.9429,64.6274,17.1129,73.52
+10,missing_2:RB,2,RB,,frame_0026.pgm,,,26,,10,,,,,,
+11,complete,0,,frame_0027.pgm,frame_0028.pgm,frame_0029.pgm,27,28,29,11,"7,2","-7,-2",0.9514,65.0945,17.4454,73.2

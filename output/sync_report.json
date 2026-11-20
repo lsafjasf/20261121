@@ -1,0 +1,841 @@
+{
+  "flash_roi": [
+    0,
+    0,
+    96,
+    32
+  ],
+  "flash_encoding": "spatial 3-cell code: left=R, center=G, right=B",
+  "total_frames": 30,
+  "decoded_frames": 30,
+  "groups": [
+    {
+      "group_id": 0,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 0,
+          "file": "frame_0000.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 0
+        },
+        "G": {
+          "order": 1,
+          "file": "frame_0001.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 0
+        },
+        "B": {
+          "order": 2,
+          "file": "frame_0002.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 0
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 1,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 3,
+          "file": "frame_0003.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 1
+        },
+        "G": {
+          "order": 4,
+          "file": "frame_0004.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 1
+        },
+        "B": {
+          "order": 5,
+          "file": "frame_0005.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 1
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 2,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 6,
+          "file": "frame_0006.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 2
+        },
+        "G": {
+          "order": 7,
+          "file": "frame_0007.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 2
+        },
+        "B": {
+          "order": 8,
+          "file": "frame_0008.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 2
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 3,
+      "status": "missing_1:G",
+      "missing": [
+        "G"
+      ],
+      "frames": {
+        "R": {
+          "order": 9,
+          "file": "frame_0009.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 3
+        },
+        "B": {
+          "order": 10,
+          "file": "frame_0010.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 3
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 4,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 11,
+          "file": "frame_0011.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 4
+        },
+        "G": {
+          "order": 12,
+          "file": "frame_0012.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 4
+        },
+        "B": {
+          "order": 13,
+          "file": "frame_0013.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 4
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 5,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 14,
+          "file": "frame_0014.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 5
+        },
+        "G": {
+          "order": 15,
+          "file": "frame_0015.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 5
+        },
+        "B": {
+          "order": 16,
+          "file": "frame_0016.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 5
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 6,
+      "status": "missing_2:GB",
+      "missing": [
+        "G",
+        "B"
+      ],
+      "frames": {
+        "R": {
+          "order": 17,
+          "file": "frame_0017.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 6
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 7,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 18,
+          "file": "frame_0018.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 7
+        },
+        "G": {
+          "order": 19,
+          "file": "frame_0019.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 7
+        },
+        "B": {
+          "order": 20,
+          "file": "frame_0020.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 7
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 8,
+      "status": "missing_1:R",
+      "missing": [
+        "R"
+      ],
+      "frames": {
+        "G": {
+          "order": 21,
+          "file": "frame_0021.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 8
+        },
+        "B": {
+          "order": 22,
+          "file": "frame_0022.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 8
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 9,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 23,
+          "file": "frame_0023.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 9
+        },
+        "G": {
+          "order": 24,
+          "file": "frame_0024.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 9
+        },
+        "B": {
+          "order": 25,
+          "file": "frame_0025.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 9
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 10,
+      "status": "missing_2:RB",
+      "missing": [
+        "R",
+        "B"
+      ],
+      "frames": {
+        "G": {
+          "order": 26,
+          "file": "frame_0026.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 10
+        }
+      },
+      "warnings": []
+    },
+    {
+      "group_id": 11,
+      "status": "complete",
+      "missing": [],
+      "frames": {
+        "R": {
+          "order": 27,
+          "file": "frame_0027.pgm",
+          "channel": "R",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            187.75,
+            4.0,
+            4.0
+          ],
+          "group_id": 11
+        },
+        "G": {
+          "order": 28,
+          "file": "frame_0028.pgm",
+          "channel": "G",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            187.75,
+            4.0
+          ],
+          "group_id": 11
+        },
+        "B": {
+          "order": 29,
+          "file": "frame_0029.pgm",
+          "channel": "B",
+          "flash_confidence": 0.9787,
+          "flash_cell_means": [
+            4.0,
+            4.0,
+            187.75
+          ],
+          "group_id": 11
+        }
+      },
+      "warnings": []
+    }
+  ],
+  "frames": [
+    {
+      "order": 0,
+      "file": "frame_0000.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 0
+    },
+    {
+      "order": 1,
+      "file": "frame_0001.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 0
+    },
+    {
+      "order": 2,
+      "file": "frame_0002.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 0
+    },
+    {
+      "order": 3,
+      "file": "frame_0003.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 1
+    },
+    {
+      "order": 4,
+      "file": "frame_0004.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 1
+    },
+    {
+      "order": 5,
+      "file": "frame_0005.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 1
+    },
+    {
+      "order": 6,
+      "file": "frame_0006.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 2
+    },
+    {
+      "order": 7,
+      "file": "frame_0007.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 2
+    },
+    {
+      "order": 8,
+      "file": "frame_0008.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 2
+    },
+    {
+      "order": 9,
+      "file": "frame_0009.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 3
+    },
+    {
+      "order": 10,
+      "file": "frame_0010.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 3
+    },
+    {
+      "order": 11,
+      "file": "frame_0011.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 4
+    },
+    {
+      "order": 12,
+      "file": "frame_0012.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 4
+    },
+    {
+      "order": 13,
+      "file": "frame_0013.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 4
+    },
+    {
+      "order": 14,
+      "file": "frame_0014.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 5
+    },
+    {
+      "order": 15,
+      "file": "frame_0015.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 5
+    },
+    {
+      "order": 16,
+      "file": "frame_0016.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 5
+    },
+    {
+      "order": 17,
+      "file": "frame_0017.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 6
+    },
+    {
+      "order": 18,
+      "file": "frame_0018.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 7
+    },
+    {
+      "order": 19,
+      "file": "frame_0019.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 7
+    },
+    {
+      "order": 20,
+      "file": "frame_0020.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 7
+    },
+    {
+      "order": 21,
+      "file": "frame_0021.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 8
+    },
+    {
+      "order": 22,
+      "file": "frame_0022.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 8
+    },
+    {
+      "order": 23,
+      "file": "frame_0023.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 9
+    },
+    {
+      "order": 24,
+      "file": "frame_0024.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 9
+    },
+    {
+      "order": 25,
+      "file": "frame_0025.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 9
+    },
+    {
+      "order": 26,
+      "file": "frame_0026.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 10
+    },
+    {
+      "order": 27,
+      "file": "frame_0027.pgm",
+      "channel": "R",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        187.75,
+        4.0,
+        4.0
+      ],
+      "group_id": 11
+    },
+    {
+      "order": 28,
+      "file": "frame_0028.pgm",
+      "channel": "G",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        187.75,
+        4.0
+      ],
+      "group_id": 11
+    },
+    {
+      "order": 29,
+      "file": "frame_0029.pgm",
+      "channel": "B",
+      "flash_confidence": 0.9787,
+      "flash_cell_means": [
+        4.0,
+        4.0,
+        187.75
+      ],
+      "group_id": 11
+    }
+  ]
+}
