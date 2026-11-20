@@ -1,0 +1,183 @@
+{
+  "inputs": {
+    "a": "testdata/A.wav",
+    "b": "testdata/B.wav"
+  },
+  "loudness_gain_db": {
+    "a": 0.06,
+    "b": 7.53
+  },
+  "tempo_bpm": {
+    "a": 120.33,
+    "b": 121.68
+  },
+  "beats_detected": {
+    "a": 131,
+    "b": 132
+  },
+  "dtw_mean_step_cost": 0.1389,
+  "diagnostics": {
+    "tempo_ratio_a_over_b": 1.02381,
+    "median_beat_a_frames": 43.0,
+    "median_beat_b_frames": 42.0,
+    "n_windows_scored": 25
+  },
+  "candidates": [
+    {
+      "entry_beat": 8,
+      "exit_beat": 40,
+      "a_entry_frame": 340.0,
+      "a_exit_frame": 1720.0,
+      "b_entry_frame": 334.0,
+      "b_exit_frame": 1685.0,
+      "entry_sim": 0.6805,
+      "exit_sim": 0.7298,
+      "interior_sim": 0.7132,
+      "b_beats_in_span": 32,
+      "score": 0.6985,
+      "warnings": [],
+      "a_entry_s": 3.947,
+      "a_exit_s": 19.969,
+      "b_entry_s": 3.878,
+      "b_exit_s": 19.563
+    },
+    {
+      "entry_beat": 24,
+      "exit_beat": 56,
+      "a_entry_frame": 1031.0,
+      "a_exit_frame": 2409.0,
+      "b_entry_frame": 1011.0,
+      "b_exit_frame": 2362.5,
+      "entry_sim": 0.8336,
+      "exit_sim": 0.8376,
+      "interior_sim": 0.8914,
+      "b_beats_in_span": 32,
+      "score": 0.8571,
+      "warnings": [],
+      "a_entry_s": 11.97,
+      "a_exit_s": 27.968,
+      "b_entry_s": 11.738,
+      "b_exit_s": 27.429
+    },
+    {
+      "entry_beat": 48,
+      "exit_beat": 80,
+      "a_entry_frame": 2064.0,
+      "a_exit_frame": 3443.0,
+      "b_entry_frame": 2024.0,
+      "b_exit_frame": 3375.5,
+      "entry_sim": 0.7411,
+      "exit_sim": 0.6884,
+      "interior_sim": 0.7891,
+      "b_beats_in_span": 32,
+      "score": 0.734,
+      "warnings": [],
+      "a_entry_s": 23.963,
+      "a_exit_s": 39.973,
+      "b_entry_s": 23.499,
+      "b_exit_s": 39.189
+    },
+    {
+      "entry_beat": 64,
+      "exit_beat": 96,
+      "a_entry_frame": 2753.0,
+      "a_exit_frame": 4132.0,
+      "b_entry_frame": 2699.0,
+      "b_exit_frame": 4092.0,
+      "entry_sim": 0.8253,
+      "exit_sim": 0.8252,
+      "interior_sim": 0.0183,
+      "b_beats_in_span": 33,
+      "score": 0.2512,
+      "warnings": [
+        "beat_count_mismatch: mapped B span is 33.17 beat-durations (grid count 33), expected 32 (1.17 extra beat(s) -> likely inserted/dropped beat in this region)",
+        "tempo_drift_mismatch: local A/B duration ratio 0.990 deviates from global 1.024 by >2% (structural difference, not just tempo)"
+      ],
+      "a_entry_s": 31.962,
+      "a_exit_s": 47.972,
+      "b_entry_s": 31.335,
+      "b_exit_s": 47.508
+    },
+    {
+      "entry_beat": 96,
+      "exit_beat": 128,
+      "a_entry_frame": 4132.0,
+      "a_exit_frame": 5508.0,
+      "b_entry_frame": 4092.0,
+      "b_exit_frame": 5442.0,
+      "entry_sim": 0.8252,
+      "exit_sim": 1.0,
+      "interior_sim": 0.8181,
+      "b_beats_in_span": 32,
+      "score": 0.8398,
+      "warnings": [],
+      "a_entry_s": 47.972,
+      "a_exit_s": 63.948,
+      "b_entry_s": 47.508,
+      "b_exit_s": 63.181
+    }
+  ],
+  "previews": [
+    {
+      "rank": 1,
+      "a_with_b_middle": "out_test/preview1_A_with_B_middle.wav",
+      "b_with_a_middle": "out_test/preview1_B_with_A_middle.wav",
+      "joint_clips": [
+        "out_test/preview1_A_with_B_middle_joint_entry.wav",
+        "out_test/preview1_A_with_B_middle_joint_exit.wav",
+        "out_test/preview1_B_with_A_middle_joint_entry.wav",
+        "out_test/preview1_B_with_A_middle_joint_exit.wav"
+      ]
+    },
+    {
+      "rank": 2,
+      "a_with_b_middle": "out_test/preview2_A_with_B_middle.wav",
+      "b_with_a_middle": "out_test/preview2_B_with_A_middle.wav",
+      "joint_clips": [
+        "out_test/preview2_A_with_B_middle_joint_entry.wav",
+        "out_test/preview2_A_with_B_middle_joint_exit.wav",
+        "out_test/preview2_B_with_A_middle_joint_entry.wav",
+        "out_test/preview2_B_with_A_middle_joint_exit.wav"
+      ]
+    },
+    {
+      "rank": 3,
+      "a_with_b_middle": "out_test/preview3_A_with_B_middle.wav",
+      "b_with_a_middle": "out_test/preview3_B_with_A_middle.wav",
+      "joint_clips": [
+        "out_test/preview3_A_with_B_middle_joint_entry.wav",
+        "out_test/preview3_A_with_B_middle_joint_exit.wav",
+        "out_test/preview3_B_with_A_middle_joint_entry.wav",
+        "out_test/preview3_B_with_A_middle_joint_exit.wav"
+      ]
+    },
+    {
+      "rank": 4,
+      "a_with_b_middle": "out_test/preview4_A_with_B_middle.wav",
+      "b_with_a_middle": "out_test/preview4_B_with_A_middle.wav",
+      "joint_clips": [
+        "out_test/preview4_A_with_B_middle_joint_entry.wav",
+        "out_test/preview4_A_with_B_middle_joint_exit.wav",
+        "out_test/preview4_B_with_A_middle_joint_entry.wav",
+        "out_test/preview4_B_with_A_middle_joint_exit.wav"
+      ]
+    },
+    {
+      "rank": 5,
+      "a_with_b_middle": "out_test/preview5_A_with_B_middle.wav",
+      "b_with_a_middle": "out_test/preview5_B_with_A_middle.wav",
+      "joint_clips": [
+        "out_test/preview5_A_with_B_middle_joint_entry.wav",
+        "out_test/preview5_A_with_B_middle_joint_exit.wav",
+        "out_test/preview5_B_with_A_middle_joint_entry.wav",
+        "out_test/preview5_B_with_A_middle_joint_exit.wav"
+      ]
+    }
+  ],
+  "evidence_files": [
+    "evidence_envelopes.svg",
+    "evidence_dtw.svg",
+    "evidence_scores.svg",
+    "report.json"
+  ]
+}

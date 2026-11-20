@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" font-family="monospace" font-size="12">
+<rect width="900" height="260" fill="white"/>
+<text x="20" y="20">Swap-window score vs entry beat</text>
+<rect x="60" y="30" width="810" height="190" fill="none" stroke="#ccc"/>
+<polyline points="60.0,181.9 93.8,139.3 127.5,65.2 161.2,147.8 195.0,186.7 228.8,37.1 262.5,30.0 296.2,55.6 330.0,182.2 363.8,180.4 397.5,57.5 431.2,114.9 465.0,57.3 498.7,180.1 532.5,163.0 566.2,166.4 600.0,164.3 633.8,179.6 667.5,164.8 701.2,186.1 735.0,172.7 768.8,180.0 802.5,40.3 836.2,175.4 870.0,33.8" fill="none" stroke="#1f77b4" stroke-width="1"/>
+<line x1="127.5" y1="30" x2="127.5" y2="220" stroke="#2ca02c" stroke-width="2"/>
+<line x1="262.5" y1="30" x2="262.5" y2="220" stroke="#2ca02c" stroke-width="2"/>
+<line x1="465.0" y1="30" x2="465.0" y2="220" stroke="#2ca02c" stroke-width="2"/>
+<line x1="600.0" y1="30" x2="600.0" y2="220" stroke="#2ca02c" stroke-width="2"/>
+<line x1="870.0" y1="30" x2="870.0" y2="220" stroke="#2ca02c" stroke-width="2"/>
+<text x="60" y="236" fill="#888">entry beat index (green = reported candidates)</text>
+</svg>
