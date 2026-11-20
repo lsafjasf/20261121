@@ -1,0 +1,5 @@
+# 离线演示所需第三方库（本机已预装在用户 site-packages）
+numpy>=2.0
+pillow>=10.0
+# 以下为可选：matplotlib/cv2/imageio 在当前实现中不是硬依赖，
+# 仅在后续扩展视频导出时使用，核心管线只需要 numpy + pillow。
