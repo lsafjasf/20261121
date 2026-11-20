@@ -1,0 +1,10 @@
+
+=== profanity-delay demo report ===
+markers embedded in input : [(10.0, 10.96), (14.6, 15.56)]
+markers found in output   : []
+dump-key presses          : 2
+audio discarded by dumps  : 7.18 s
+min water level           : 0.010 s
+final water level         : 6.990 s (target 7.0 s)
+frames held to rebuild    : 717 (only during low-energy audio)
+PROOF: PASS — dumped intervals never reached the speaker path; consecutive dumps never re-read discarded data.
