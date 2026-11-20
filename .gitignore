@@ -1,0 +1,8 @@
+.gradle/
+build/
+*/build/
+local.properties
+demo_out/
+demo/emulator_out/
+*.iml
+.idea/
