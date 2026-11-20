@@ -1,0 +1,20 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: T,DejaVu Sans,20,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,3,1,0,2,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:04.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Blinking warning
+Dialogue: 1,0:00:04.00,0:00:06.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs19\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Stretched glyphs
+Dialogue: 1,0:00:06.00,0:00:08.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Soft drop shadow
+Dialogue: 1,0:00:08.00,0:00:10.00,T,,64,64,0,,{\an1\pos(64,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Multi row\N{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}alignment
+Dialogue: 1,0:00:10.00,0:00:12.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Translated sign
+Dialogue: 1,0:00:12.00,0:00:14.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Vertical text
+Dialogue: 1,0:00:14.00,0:00:16.00,T,,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Has foreign metadata

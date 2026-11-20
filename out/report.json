@@ -1,0 +1,372 @@
+[
+  {
+    "source": "samples/01_cascade.ttml",
+    "imsc": "out/01_cascade.imsc.ttml",
+    "degradations": [],
+    "verify": {
+      "source": "samples/01_cascade.ttml",
+      "imsc": "out/01_cascade.imsc.ttml",
+      "fps": "25",
+      "frames": 252,
+      "findings": [],
+      "checks": {
+        "frame_diff": {
+          "changed_frames": "none",
+          "changed_count": 0
+        },
+        "overlap": {
+          "incident_groups": 0
+        },
+        "flicker": {
+          "single_frame_cues": []
+        },
+        "fractional": []
+      },
+      "keyframes": [
+        "out/verify/01_cascade/frames/multiline_imsc_f37.png",
+        "out/verify/01_cascade/frames/multiline_src_f37.png",
+        "out/verify/01_cascade/frames/multiregion_imsc_f200.png",
+        "out/verify/01_cascade/frames/multiregion_src_f200.png"
+      ]
+    }
+  },
+  {
+    "source": "samples/02_timecontainers.ttml",
+    "imsc": "out/02_timecontainers.imsc.ttml",
+    "degradations": [
+      {
+        "element": "/tt/body",
+        "attribute": "timeContainer",
+        "value": "seq",
+        "reason": "IMSC does not allow seq time containers",
+        "suggestion": "flattened to absolute par timing on each <p>",
+        "severity": "info"
+      },
+      {
+        "element": "/tt/body/div[1]/p[2]",
+        "attribute": "begin/end",
+        "value": "3.001500s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[3]",
+        "attribute": "begin/end",
+        "value": "3.351850s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[3]",
+        "attribute": "begin/end",
+        "value": "5.351850s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/div[1]/p[1]",
+        "attribute": "begin/end",
+        "value": "5.351850s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/div[1]/p[1]",
+        "attribute": "begin/end",
+        "value": "6.351850s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/div[1]/p[2]",
+        "attribute": "begin/end",
+        "value": "5.360192s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/div[1]/p[2]",
+        "attribute": "begin/end",
+        "value": "6.360192s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[2]/p[2]/span[1]",
+        "attribute": "begin/end",
+        "value": "begin='1s', end='1.5s'",
+        "reason": "timing on <span> is not permitted in IMSC",
+        "suggestion": "split the text into separate <p> elements carrying the timing, or move the timing up to the parent <p>",
+        "severity": "warning"
+      }
+    ],
+    "verify": {
+      "source": "samples/02_timecontainers.ttml",
+      "imsc": "out/02_timecontainers.imsc.ttml",
+      "fps": "30000/1001",
+      "frames": 193,
+      "findings": [
+        {
+          "check": "overlap",
+          "severity": "info",
+          "message": "same-region stacking: cues m2 and s4 intersect (259 px peak) on frames 161-179",
+          "frames": "161-179"
+        },
+        {
+          "check": "overlap",
+          "severity": "info",
+          "message": "same-region stacking: cues s3 and m2 intersect (305 px peak) on frames 120-160",
+          "frames": "120-160"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue m1 fractional in-point 1.0: first frame 30, expected 30 [PASS]"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue s2 fractional in-point 1.5: first frame 45, expected 45 [PASS]"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue s3 fractional in-point 3.352: first frame 101, expected 101 [PASS]"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue m2 fractional in-point 4.0: first frame 120, expected 120 [PASS]"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue s4 fractional in-point 5.352: first frame 161, expected 161 [PASS]"
+        },
+        {
+          "check": "fractional",
+          "severity": "info",
+          "message": "cue s5 fractional in-point 5.36: first frame 161, expected 161 [PASS]"
+        }
+      ],
+      "checks": {
+        "frame_diff": {
+          "changed_frames": "none",
+          "changed_count": 0
+        },
+        "overlap": {
+          "incident_groups": 2
+        },
+        "flicker": {
+          "single_frame_cues": []
+        },
+        "fractional": [
+          {
+            "cue": "m1",
+            "begin_s": 1.0,
+            "expected_first_frame": 30,
+            "rendered_first_frame": 30,
+            "ok": true
+          },
+          {
+            "cue": "s2",
+            "begin_s": 1.5,
+            "expected_first_frame": 45,
+            "rendered_first_frame": 45,
+            "ok": true
+          },
+          {
+            "cue": "s3",
+            "begin_s": 3.352,
+            "expected_first_frame": 101,
+            "rendered_first_frame": 101,
+            "ok": true
+          },
+          {
+            "cue": "m2",
+            "begin_s": 4.0,
+            "expected_first_frame": 120,
+            "rendered_first_frame": 120,
+            "ok": true
+          },
+          {
+            "cue": "s4",
+            "begin_s": 5.352,
+            "expected_first_frame": 161,
+            "rendered_first_frame": 161,
+            "ok": true
+          },
+          {
+            "cue": "s5",
+            "begin_s": 5.36,
+            "expected_first_frame": 161,
+            "rendered_first_frame": 161,
+            "ok": true
+          }
+        ]
+      },
+      "keyframes": [
+        "out/verify/02_timecontainers/frames/multiregion_imsc_f37.png",
+        "out/verify/02_timecontainers/frames/multiregion_src_f37.png",
+        "out/verify/02_timecontainers/frames/fractional_pre_cuem1_imsc_f29.png",
+        "out/verify/02_timecontainers/frames/fractional_at_cuem1_imsc_f30.png",
+        "out/verify/02_timecontainers/frames/fractional_post_cuem1_imsc_f31.png"
+      ]
+    }
+  },
+  {
+    "source": "samples/03_unsupported.ttml",
+    "imsc": "out/03_unsupported.imsc.ttml",
+    "degradations": [
+      {
+        "element": "/tt/head/styling/style[1]",
+        "attribute": "tts:fontSize",
+        "value": "50% 80%",
+        "reason": "two-component fontSize (width height) is not in IMSC",
+        "suggestion": "kept the height component (80%); use a single length",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/head/styling/style[2]",
+        "attribute": "tts:textShadow",
+        "value": "2px 2px 3px black",
+        "reason": "tts:textShadow is not in the IMSC text profile",
+        "suggestion": "approximate with tts:textOutline (supported in IMSC 1.1), e.g. a small dark outline, or pre-render the effect",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/head/styling/style[3]",
+        "attribute": "tts:writingMode",
+        "value": "tb",
+        "reason": "TTML1 writing-mode alias is not in IMSC",
+        "suggestion": "rewritten to canonical 'tbrl'",
+        "severity": "info"
+      },
+      {
+        "element": "/tt/body/div[1]/p[1]/set[1]",
+        "attribute": "set",
+        "value": "1s",
+        "reason": "discrete animation <set> is not in the IMSC text profile",
+        "suggestion": "split the caption into consecutive timed <p> elements that change tts:visibility at the same offsets",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[1]/set[2]",
+        "attribute": "set",
+        "value": "3s",
+        "reason": "discrete animation <set> is not in the IMSC text profile",
+        "suggestion": "split the caption into consecutive timed <p> elements that change tts:color at the same offsets",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[4]",
+        "attribute": "ebutts:multiRowAlign",
+        "value": "center",
+        "reason": "ebu multiRowAlign is not in IMSC",
+        "suggestion": "mapped to tts:textAlign='center' (per-line alignment of ragged lines is lost)",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[5]",
+        "attribute": "smpte:backgroundImage",
+        "value": "sign.png",
+        "reason": "SMPTE-TT image/attribute is not in the IMSC text profile",
+        "suggestion": "use the IMSC image profile for background images, or replace the image with text",
+        "severity": "warning"
+      },
+      {
+        "element": "/tt/body/div[1]/p[7]/metadata[1]",
+        "attribute": "metadata",
+        "value": "rating",
+        "reason": "foreign metadata vocabulary is not in IMSC",
+        "suggestion": "keep it in the sidecar workflow or convert to ttm:desc",
+        "severity": "info"
+      }
+    ],
+    "verify": {
+      "source": "samples/03_unsupported.ttml",
+      "imsc": "out/03_unsupported.imsc.ttml",
+      "fps": "25",
+      "frames": 402,
+      "findings": [],
+      "checks": {
+        "frame_diff": {
+          "changed_frames": "none",
+          "changed_count": 0
+        },
+        "overlap": {
+          "incident_groups": 0
+        },
+        "flicker": {
+          "single_frame_cues": []
+        },
+        "fractional": []
+      },
+      "keyframes": [
+        "out/verify/03_unsupported/frames/multiline_imsc_f225.png",
+        "out/verify/03_unsupported/frames/multiline_src_f225.png"
+      ]
+    }
+  },
+  {
+    "source": "samples/04_overlap.ttml",
+    "imsc": "out/04_overlap.imsc.ttml",
+    "degradations": [
+      {
+        "element": "/tt/body/div[1]/p[4]",
+        "attribute": "begin/end",
+        "value": "5.033300s",
+        "reason": "time is not representable exactly at the document frame rate",
+        "suggestion": "quantise cue times to whole frames or milliseconds",
+        "severity": "warning"
+      }
+    ],
+    "verify": {
+      "source": "samples/04_overlap.ttml",
+      "imsc": "out/04_overlap.imsc.ttml",
+      "fps": "30",
+      "frames": 153,
+      "findings": [
+        {
+          "check": "overlap",
+          "severity": "error",
+          "message": "cross-region overlap: cues o1 and o2 intersect (225 px peak) on frames 30-89",
+          "frames": "30-89"
+        },
+        {
+          "check": "flicker",
+          "severity": "warning",
+          "message": "cue o4 is active for a single frame (frame 150): flash-frame risk",
+          "frames": "150"
+        }
+      ],
+      "checks": {
+        "frame_diff": {
+          "changed_frames": "none",
+          "changed_count": 0
+        },
+        "overlap": {
+          "incident_groups": 1
+        },
+        "flicker": {
+          "single_frame_cues": [
+            "o4@150"
+          ]
+        },
+        "fractional": []
+      },
+      "keyframes": [
+        "out/verify/04_overlap/frames/multiregion_imsc_f60.png",
+        "out/verify/04_overlap/frames/multiregion_src_f60.png",
+        "out/verify/04_overlap/frames/overlap_imsc_f30.png"
+      ]
+    }
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "source": "samples/04_overlap.ttml",
+  "imsc": "out/04_overlap.imsc.ttml",
+  "fps": "30",
+  "frames": 153,
+  "findings": [
+    {
+      "check": "overlap",
+      "severity": "error",
+      "message": "cross-region overlap: cues o1 and o2 intersect (225 px peak) on frames 30-89",
+      "frames": "30-89"
+    },
+    {
+      "check": "flicker",
+      "severity": "warning",
+      "message": "cue o4 is active for a single frame (frame 150): flash-frame risk",
+      "frames": "150"
+    }
+  ],
+  "checks": {
+    "frame_diff": {
+      "changed_frames": "none",
+      "changed_count": 0
+    },
+    "overlap": {
+      "incident_groups": 1
+    },
+    "flicker": {
+      "single_frame_cues": [
+        "o4@150"
+      ]
+    },
+    "fractional": []
+  },
+  "keyframes": [
+    "out/verify/04_overlap/frames/multiregion_imsc_f60.png",
+    "out/verify/04_overlap/frames/multiregion_src_f60.png",
+    "out/verify/04_overlap/frames/overlap_imsc_f30.png"
+  ]
+}

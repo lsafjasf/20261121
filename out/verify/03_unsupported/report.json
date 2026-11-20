@@ -1,0 +1,24 @@
+{
+  "source": "samples/03_unsupported.ttml",
+  "imsc": "out/03_unsupported.imsc.ttml",
+  "fps": "25",
+  "frames": 402,
+  "findings": [],
+  "checks": {
+    "frame_diff": {
+      "changed_frames": "none",
+      "changed_count": 0
+    },
+    "overlap": {
+      "incident_groups": 0
+    },
+    "flicker": {
+      "single_frame_cues": []
+    },
+    "fractional": []
+  },
+  "keyframes": [
+    "out/verify/03_unsupported/frames/multiline_imsc_f225.png",
+    "out/verify/03_unsupported/frames/multiline_src_f225.png"
+  ]
+}

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tt xmlns="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:frameRate="30" ttp:cellResolution="32 18" xml:lang="en" ttp:contentProfiles="http://www.w3.org/ns/ttml/profile/imsc1.1/text">
+  <head>
+    <styling>
+      <style xml:id="cap" tts:fontFamily="sansSerif" tts:fontSize="100%" tts:color="white" />
+    </styling>
+    <layout>
+      <region xml:id="ra" tts:origin="10% 60%" tts:extent="80% 25%" tts:displayAlign="after" tts:textAlign="center" />
+      <region xml:id="rb" tts:origin="10% 78%" tts:extent="80% 18%" tts:displayAlign="before" tts:textAlign="center" />
+      <region xml:id="rc" tts:origin="10% 5%" tts:extent="80% 15%" tts:displayAlign="before" tts:textAlign="center" />
+    </layout>
+  </head>
+  <body>
+    <div style="cap">
+      <p xml:id="o1" region="ra" begin="00:00:00.000" end="00:00:04.000">Lower third speaker line</p>
+      <p xml:id="o2" region="rb" begin="00:00:01.000" end="00:00:03.000">Colliding caption below</p>
+      <p xml:id="o3" region="rc" begin="00:00:01.000" end="00:00:03.000">[DISTANT SIREN]</p>
+      <p xml:id="o4" region="rc" begin="00:00:05.000" end="00:00:05.033">blink</p>
+    </div>
+  </body>
+</tt>

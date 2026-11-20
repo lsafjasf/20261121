@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling"
+    xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+    xmlns:ttm="http://www.w3.org/ns/ttml#metadata"
+    xmlns:ebutts="urn:ebu:tt:style"
+    xmlns:smpte="http://www.smpte-ra.org/ns/2052-1:2010/smpte-tt"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    ttp:frameRate="25" xml:lang="en">
+  <head>
+    <styling>
+      <style xml:id="twoD" tts:fontSize="50% 80%"/>
+      <style xml:id="shadowed" tts:color="white" tts:textShadow="2px 2px 3px black"/>
+      <style xml:id="vertical" tts:writingMode="tb"/>
+    </styling>
+    <layout>
+      <region xml:id="r1" tts:origin="10% 75%" tts:extent="80% 20%"
+              tts:displayAlign="after" tts:textAlign="center"/>
+    </layout>
+  </head>
+  <body>
+    <div region="r1">
+      <!-- discrete animation: not in IMSC text profile -->
+      <p xml:id="u1" begin="0s" end="4s">Blinking
+        <set begin="1s" end="2s" tts:visibility="hidden"/>
+        <set begin="3s" end="4s" tts:color="red"/>
+        warning</p>
+      <!-- two-component fontSize -->
+      <p xml:id="u2" begin="4s" end="6s" style="twoD">Stretched glyphs</p>
+      <!-- textShadow (TTML2) -->
+      <p xml:id="u3" begin="6s" end="8s" style="shadowed">Soft drop shadow</p>
+      <!-- ebu multiRowAlign -->
+      <p xml:id="u4" begin="8s" end="10s" ebutts:multiRowAlign="center"
+         tts:textAlign="start">Multi row<br/>alignment</p>
+      <!-- background image (smpte) -->
+      <p xml:id="u5" begin="10s" end="12s" smpte:backgroundImage="sign.png">Translated sign</p>
+      <!-- vertical writing mode alias -->
+      <p xml:id="u6" begin="12s" end="14s" style="vertical">Vertical text</p>
+      <!-- foreign metadata -->
+      <p xml:id="u7" begin="14s" end="16s">
+        <metadata xmlns:acme="http://acme.example/tt"><acme:rating>PG</acme:rating></metadata>
+        Has foreign metadata</p>
+    </div>
+  </body>
+</tt>

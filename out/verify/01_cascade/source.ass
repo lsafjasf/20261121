@@ -1,0 +1,18 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: T,DejaVu Sans,20,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,3,1,0,2,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:03.00,T,Narrator,64,64,0,,{\an2\pos(320,342)}{\fs20\c&H0000FFFF\3a&HFF&\i1\b1\fnDejaVu Sans}Once upon a time\N{\fs20\c&H0000FFFF\3a&HFF&\i1\b1\fnDejaVu Sans}in a far away land
+Dialogue: 1,0:00:03.00,0:00:06.00,T,Alice,64,64,0,,{\an2\pos(320,342)}{\fs24\c&H0000FFFF\3a&HFF&\b1\fnDejaVu Sans}Alice said {\fs24\c&H00FFFF00\3a&HFF&\b1\fnDejaVu Sans}hello{\fs24\c&H0000FFFF\3a&HFF&\b1\fnDejaVu Sans} loudly
+Dialogue: 1,0:00:06.00,0:00:10.00,T,Alice,64,64,0,,{\an2\pos(320,342)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Line one is hers\N{\fs20\c&H00FFFFFF\3a&HFF&\i1\fnDejaVu Sans}line two is narrated\N{\fs20\c&H0000FFFF\3a&HFF&\b1\fnDejaVu Sans}line three is bold yellow
+Dialogue: 0,0:00:07.00,0:00:09.00,T,,0,0,0,,{\an7\pos(64,18)\p1\c&H7F000000\1a&H7F&}m 0 0 l 512 0 l 512 54 l 0 54
+Dialogue: 1,0:00:07.00,0:00:09.00,T,,64,64,0,,{\an8\pos(320,18)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}[THUNDER RUMBLING]

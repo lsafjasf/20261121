@@ -1,0 +1,113 @@
+{
+  "source": "samples/02_timecontainers.ttml",
+  "imsc": "out/02_timecontainers.imsc.ttml",
+  "fps": "30000/1001",
+  "frames": 193,
+  "findings": [
+    {
+      "check": "overlap",
+      "severity": "info",
+      "message": "same-region stacking: cues m2 and s4 intersect (259 px peak) on frames 161-179",
+      "frames": "161-179"
+    },
+    {
+      "check": "overlap",
+      "severity": "info",
+      "message": "same-region stacking: cues s3 and m2 intersect (305 px peak) on frames 120-160",
+      "frames": "120-160"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue m1 fractional in-point 1.0: first frame 30, expected 30 [PASS]"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue s2 fractional in-point 1.5: first frame 45, expected 45 [PASS]"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue s3 fractional in-point 3.352: first frame 101, expected 101 [PASS]"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue m2 fractional in-point 4.0: first frame 120, expected 120 [PASS]"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue s4 fractional in-point 5.352: first frame 161, expected 161 [PASS]"
+    },
+    {
+      "check": "fractional",
+      "severity": "info",
+      "message": "cue s5 fractional in-point 5.36: first frame 161, expected 161 [PASS]"
+    }
+  ],
+  "checks": {
+    "frame_diff": {
+      "changed_frames": "none",
+      "changed_count": 0
+    },
+    "overlap": {
+      "incident_groups": 2
+    },
+    "flicker": {
+      "single_frame_cues": []
+    },
+    "fractional": [
+      {
+        "cue": "m1",
+        "begin_s": 1.0,
+        "expected_first_frame": 30,
+        "rendered_first_frame": 30,
+        "ok": true
+      },
+      {
+        "cue": "s2",
+        "begin_s": 1.5,
+        "expected_first_frame": 45,
+        "rendered_first_frame": 45,
+        "ok": true
+      },
+      {
+        "cue": "s3",
+        "begin_s": 3.352,
+        "expected_first_frame": 101,
+        "rendered_first_frame": 101,
+        "ok": true
+      },
+      {
+        "cue": "m2",
+        "begin_s": 4.0,
+        "expected_first_frame": 120,
+        "rendered_first_frame": 120,
+        "ok": true
+      },
+      {
+        "cue": "s4",
+        "begin_s": 5.352,
+        "expected_first_frame": 161,
+        "rendered_first_frame": 161,
+        "ok": true
+      },
+      {
+        "cue": "s5",
+        "begin_s": 5.36,
+        "expected_first_frame": 161,
+        "rendered_first_frame": 161,
+        "ok": true
+      }
+    ]
+  },
+  "keyframes": [
+    "out/verify/02_timecontainers/frames/multiregion_imsc_f37.png",
+    "out/verify/02_timecontainers/frames/multiregion_src_f37.png",
+    "out/verify/02_timecontainers/frames/fractional_pre_cuem1_imsc_f29.png",
+    "out/verify/02_timecontainers/frames/fractional_at_cuem1_imsc_f30.png",
+    "out/verify/02_timecontainers/frames/fractional_post_cuem1_imsc_f31.png"
+  ]
+}

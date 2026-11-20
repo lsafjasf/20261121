@@ -1,0 +1,26 @@
+{
+  "source": "samples/01_cascade.ttml",
+  "imsc": "out/01_cascade.imsc.ttml",
+  "fps": "25",
+  "frames": 252,
+  "findings": [],
+  "checks": {
+    "frame_diff": {
+      "changed_frames": "none",
+      "changed_count": 0
+    },
+    "overlap": {
+      "incident_groups": 0
+    },
+    "flicker": {
+      "single_frame_cues": []
+    },
+    "fractional": []
+  },
+  "keyframes": [
+    "out/verify/01_cascade/frames/multiline_imsc_f37.png",
+    "out/verify/01_cascade/frames/multiline_src_f37.png",
+    "out/verify/01_cascade/frames/multiregion_imsc_f200.png",
+    "out/verify/01_cascade/frames/multiregion_src_f200.png"
+  ]
+}

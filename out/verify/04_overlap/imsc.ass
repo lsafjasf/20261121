@@ -1,0 +1,17 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: T,DejaVu Sans,20,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,3,1,0,2,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:04.00,T,,64,64,0,,{\an2\pos(320,306)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Lower third speaker line
+Dialogue: 1,0:00:01.00,0:00:03.00,T,,64,64,0,,{\an8\pos(320,280)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}Colliding caption below
+Dialogue: 1,0:00:01.00,0:00:03.00,T,,64,64,0,,{\an8\pos(320,18)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}[DISTANT SIREN]
+Dialogue: 1,0:00:05.00,0:00:05.03,T,,64,64,0,,{\an8\pos(320,18)}{\fs20\c&H00FFFFFF\3a&HFF&\fnDejaVu Sans}blink

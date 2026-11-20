@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling"
+    xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    ttp:frameRate="30" ttp:cellResolution="32 18" xml:lang="en">
+  <head>
+    <styling>
+      <style xml:id="cap" tts:fontFamily="sansSerif" tts:fontSize="100%" tts:color="white"/>
+    </styling>
+    <layout>
+      <!-- these two regions intersect: verifier must flag rendered overlap -->
+      <region xml:id="ra" tts:origin="10% 60%" tts:extent="80% 25%"
+              tts:displayAlign="after" tts:textAlign="center"/>
+      <region xml:id="rb" tts:origin="10% 78%" tts:extent="80% 18%"
+              tts:displayAlign="before" tts:textAlign="center"/>
+      <region xml:id="rc" tts:origin="10% 5%" tts:extent="80% 15%"
+              tts:displayAlign="before" tts:textAlign="center"/>
+    </layout>
+  </head>
+  <body>
+    <div style="cap">
+      <p xml:id="o1" region="ra" begin="0s" end="4s">Lower third speaker line</p>
+      <p xml:id="o2" region="rb" begin="1s" end="3s">Colliding caption below</p>
+      <p xml:id="o3" region="rc" begin="1s" end="3s">[DISTANT SIREN]</p>
+      <!-- one-frame cue: flash frame risk -->
+      <p xml:id="o4" region="rc" begin="5s" end="5.0333s">blink</p>
+    </div>
+  </body>
+</tt>
