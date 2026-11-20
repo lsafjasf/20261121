@@ -1,0 +1,144 @@
+{
+  "schema": "hearing-demo-compressor/v1",
+  "tool_version": "1.0.0",
+  "sample_rate_hz": 48000,
+  "crossover_hz": [
+    500.0,
+    2000.0,
+    6000.0
+  ],
+  "band_edges_hz": [
+    125,
+    500,
+    2000,
+    6000,
+    8000
+  ],
+  "band_names": [
+    "低 (<500Hz)",
+    "中低 (500-2k)",
+    "中高 (2k-6k)",
+    "高 (>6k)"
+  ],
+  "crossover_type": "一阶互补分频树（LP+HP 恒等，四带全频带平坦重组）",
+  "prescription_note": "简化线性处方（半增益 + 线性压缩比），仅用于原型检查，非临床验配",
+  "level_calibration_note": "内部以 dBFS 表示；0 dBFS 对应设备满量程，HL->dBFS 映射需在固件标定后替换",
+  "ears": {
+    "left": {
+      "thresholds_dbhl": {
+        "125": 25.0,
+        "250": 30.0,
+        "500": 35.0,
+        "1000": 45.0,
+        "2000": 55.0,
+        "4000": 62.5,
+        "8000": 70.0
+      },
+      "point_status": {
+        "125": "measured",
+        "250": "measured",
+        "500": "measured",
+        "1000": "measured",
+        "2000": "measured",
+        "4000": "interpolated",
+        "8000": "measured"
+      },
+      "bands": [
+        {
+          "hl_band_db": 30.0,
+          "insertion_gain_db": 15.0,
+          "ratio": 2.2,
+          "knee_dbfs": -45.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 45.0,
+          "insertion_gain_db": 22.5,
+          "ratio": 2.8,
+          "knee_dbfs": -40.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 60.9,
+          "insertion_gain_db": 30.5,
+          "ratio": 3.44,
+          "knee_dbfs": -40.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 68.4,
+          "insertion_gain_db": 34.2,
+          "ratio": 3.74,
+          "knee_dbfs": -40.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        }
+      ]
+    },
+    "right": {
+      "thresholds_dbhl": {
+        "125": 15.0,
+        "250": 17.5,
+        "500": 20.0,
+        "1000": 25.0,
+        "2000": 40.0,
+        "4000": 55.0,
+        "8000": 60.0
+      },
+      "point_status": {
+        "125": "measured",
+        "250": "interpolated",
+        "500": "measured",
+        "1000": "measured",
+        "2000": "measured",
+        "4000": "measured",
+        "8000": "measured"
+      },
+      "bands": [
+        {
+          "hl_band_db": 17.5,
+          "insertion_gain_db": 8.8,
+          "ratio": 1.7,
+          "knee_dbfs": -51.2,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 30.0,
+          "insertion_gain_db": 15.0,
+          "ratio": 2.2,
+          "knee_dbfs": -45.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 49.0,
+          "insertion_gain_db": 24.5,
+          "ratio": 2.96,
+          "knee_dbfs": -40.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        },
+        {
+          "hl_band_db": 59.0,
+          "insertion_gain_db": 29.5,
+          "ratio": 3.36,
+          "knee_dbfs": -40.0,
+          "ceiling_dbfs": -3.0,
+          "attack_ms": 5.0,
+          "release_ms": 80.0
+        }
+      ]
+    }
+  }
+}
