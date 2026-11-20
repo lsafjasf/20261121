@@ -1,0 +1,19 @@
+{
+  "clips": [
+    {
+      "clip_id": "scene_walk",
+      "events": [
+        { "time_sec": 0.000, "velocity": 0.45, "surface": "concrete" },
+        { "time_sec": 0.520, "velocity": 0.50, "surface": "concrete" },
+        { "time_sec": 1.040, "velocity": 0.48, "surface": "wood" }
+      ]
+    },
+    {
+      "clip_id": "scene_run",
+      "events": [
+        { "time_sec": 0.000, "velocity": 0.85, "surface": "concrete" },
+        { "time_sec": 0.150, "velocity": 0.90, "surface": "concrete" }
+      ]
+    }
+  ]
+}

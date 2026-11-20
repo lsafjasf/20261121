@@ -1,0 +1,12 @@
+{
+  "events": [
+    { "time_sec": 0.000, "velocity": 0.82, "surface": "concrete" },
+    { "time_sec": 0.140, "velocity": 0.88, "surface": "concrete" },
+    { "time_sec": 0.280, "velocity": 0.90, "surface": "concrete" },
+    { "time_sec": 0.420, "velocity": 0.85, "surface": "wood" },
+    { "time_sec": 0.560, "velocity": 0.91, "surface": "wood" },
+    { "time_sec": 0.700, "velocity": 0.87, "surface": "concrete" },
+    { "time_sec": 0.840, "velocity": 0.89, "surface": "concrete" },
+    { "time_sec": 0.980, "velocity": 0.84, "surface": "grass" }
+  ]
+}

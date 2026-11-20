@@ -1,0 +1,10 @@
+{
+  "events": [
+    { "time_sec": 0.000, "velocity": 0.45, "surface": "concrete" },
+    { "time_sec": 0.520, "velocity": 0.50, "surface": "concrete" },
+    { "time_sec": 1.040, "velocity": 0.48, "surface": "wood" },
+    { "time_sec": 1.560, "velocity": 0.55, "surface": "wood" },
+    { "time_sec": 2.100, "velocity": 0.30, "surface": "grass", "foot": "L" },
+    { "time_sec": 2.620, "velocity": 0.32, "surface": "grass", "foot": "R" }
+  ]
+}

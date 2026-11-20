@@ -1,0 +1,28 @@
+{
+  "sample_rate": 48000,
+  "block_frames": 256,
+  "channel_layout": "stereo",
+  "library_root": "out/library",
+  "layers": [
+    { "name": "soft",   "min_velocity": 0.0, "max_velocity": 0.34, "gain_db": -4.0 },
+    { "name": "normal", "min_velocity": 0.34, "max_velocity": 0.67, "gain_db": 0.0 },
+    { "name": "hard",   "min_velocity": 0.67, "max_velocity": 1.0,  "gain_db": 3.0 }
+  ],
+  "surfaces": [
+    { "name": "concrete", "pitch_semitones": 0.0,  "lowpass_hz": 12000, "variants_per_layer": 3 },
+    { "name": "wood",     "pitch_semitones": 2.0,  "lowpass_hz": 6000,  "variants_per_layer": 3 },
+    { "name": "grass",    "pitch_semitones": -3.0, "lowpass_hz": 2500,  "variants_per_layer": 2 }
+  ],
+  "interval": {
+    "overlap_window_sec": 0.18,
+    "overlap_duck_db": -4.0,
+    "tail_padding_sec": 0.05,
+    "max_voices": 32
+  },
+  "deformation": {
+    "pitch_jitter_semitones": 0.25,
+    "gain_jitter_db": 1.5,
+    "pan_jitter": 0.15,
+    "base_seed": 5073251596
+  }
+}

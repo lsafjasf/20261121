@@ -1,0 +1,6 @@
+{
+  "events": [
+    { "time_sec": 0.000, "velocity": 0.50, "surface": "concrete" },
+    { "time_sec": 0.500, "velocity": 0.50, "surface": "marble" }
+  ]
+}
