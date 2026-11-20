@@ -1,0 +1,17 @@
+[package]
+name = "riaa-eq"
+version = "0.1.0"
+edition = "2021"
+description = "Archive-room RIAA equalization renderer with explicit input/output representations"
+
+[lib]
+name = "riaa_eq"
+path = "src/lib.rs"
+
+[[bin]]
+name = "riaa-eq"
+path = "src/main.rs"
+
+[profile.release]
+lto = true
+codegen-units = 1
