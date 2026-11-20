@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/hj/userfeedback/uid4-0020/tests/DownmixLab.Tests/DownmixLab.Tests.csproj": {}
+  },
+  "projects": {
+    "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj",
+        "projectName": "DownmixLab.Core",
+        "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj",
+        "packagesPath": "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/",
+        "outputPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/hj/.codex-relay-home-tiwtxg7o/.dotnet/sdk/8.0.428/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/hj/userfeedback/uid4-0020/tests/DownmixLab.Tests/DownmixLab.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hj/userfeedback/uid4-0020/tests/DownmixLab.Tests/DownmixLab.Tests.csproj",
+        "projectName": "DownmixLab.Tests",
+        "projectPath": "/home/hj/userfeedback/uid4-0020/tests/DownmixLab.Tests/DownmixLab.Tests.csproj",
+        "packagesPath": "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/",
+        "outputPath": "/home/hj/userfeedback/uid4-0020/tests/DownmixLab.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj": {
+                "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/hj/.codex-relay-home-tiwtxg7o/.dotnet/sdk/8.0.428/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

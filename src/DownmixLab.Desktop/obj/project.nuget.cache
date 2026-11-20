@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jljrr71dfp4=",
+  "success": true,
+  "projectFilePath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/DownmixLab.Desktop.csproj",
+  "expectedPackageFiles": [
+    "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.34/microsoft.windowsdesktop.app.ref.8.0.34.nupkg.sha512"
+  ],
+  "logs": []
+}

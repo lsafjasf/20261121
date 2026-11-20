@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DownmixLab.Desktop/1.0.0": {
+        "dependencies": {
+          "DownmixLab.Core": "1.0.0"
+        },
+        "runtime": {
+          "DownmixLab.Desktop.dll": {}
+        }
+      },
+      "DownmixLab.Core/1.0.0": {
+        "runtime": {
+          "DownmixLab.Core.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DownmixLab.Desktop/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DownmixLab.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

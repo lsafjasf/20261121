@@ -1,0 +1,94 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "DownmixLab.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DownmixLab.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DownmixLab.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DownmixLab.Core/1.0.0": {
+      "type": "project",
+      "path": "../DownmixLab.Core/DownmixLab.Core.csproj",
+      "msbuildProject": "../DownmixLab.Core/DownmixLab.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "DownmixLab.Core >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Cli/DownmixLab.Cli.csproj",
+      "projectName": "DownmixLab.Cli",
+      "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Cli/DownmixLab.Cli.csproj",
+      "packagesPath": "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/",
+      "outputPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Cli/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj": {
+              "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/hj/.codex-relay-home-tiwtxg7o/.dotnet/sdk/8.0.428/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/DownmixLab.Desktop.csproj": {}
+  },
+  "projects": {
+    "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj",
+        "projectName": "DownmixLab.Core",
+        "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj",
+        "packagesPath": "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/",
+        "outputPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/hj/.codex-relay-home-tiwtxg7o/.dotnet/sdk/8.0.428/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/DownmixLab.Desktop.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/DownmixLab.Desktop.csproj",
+        "projectName": "DownmixLab.Desktop",
+        "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/DownmixLab.Desktop.csproj",
+        "packagesPath": "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/packages/",
+        "outputPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Desktop/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/hj/.codex-relay-home-tiwtxg7o/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj": {
+                "projectPath": "/home/hj/userfeedback/uid4-0020/src/DownmixLab.Core/DownmixLab.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.34, 8.0.34]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/hj/.codex-relay-home-tiwtxg7o/.dotnet/sdk/8.0.428/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
