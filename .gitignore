@@ -1,0 +1,3 @@
+/build/
+/artifacts/debug*/
+/artifacts/demo[0-9]*/
